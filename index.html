@@ -608,6 +608,75 @@
       line-height: 1.5;
     }
 
+    /* ── ABOUT ── */
+    #about {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .about-photo {
+      position: sticky;
+      top: 6rem;
+    }
+
+    .about-photo img {
+      width: 100%;
+      display: block;
+      filter: grayscale(10%);
+    }
+
+    .about-headline {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 4rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 2.5rem;
+    }
+    .about-headline em { font-style: italic; }
+
+    .about-name {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-bio {
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-creds {
+      margin-top: 2.5rem;
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+    }
+
+    .about-cred {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--navy);
+    }
+
     /* ── CTA ── */
     #contact {
       display: grid;
@@ -778,6 +847,8 @@
       .proof-stat { border-right: none; border-bottom: 1px solid #333; padding: 2rem 0; }
       .proof-stat:not(:first-child) { padding-left: 0; }
 
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-photo { position: static; }
       #contact { grid-template-columns: 1fr; gap: 3rem; }
 
       footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.5rem; }
@@ -805,6 +876,7 @@
       <li><a href="#framework">The Framework</a></li>
       <li><a href="#agents">How It Works</a></li>
       <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#contact" class="nav-cta">Get Started</a></li>
     </ul>
   </nav>
@@ -1023,6 +1095,25 @@
     </div>
   </section>
 
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <p class="section-tag">The Founder</p>
+    <div class="about-grid">
+      <div class="about-photo fade-in">
+        <img src="headshot.jpg" alt="LeeAnn Silver, Founder of On.Visibility" />
+      </div>
+      <div class="about-content fade-in">
+        <p class="about-name">LeeAnn Silver</p>
+        <p class="about-bio">
+          VP of PR turned visibility strategist. For 20 years I helped build brands through earned media. Then AI changed everything. Authority now comes from documented expertise, not bylines.
+        </p>
+        <p class="about-bio">
+          I help B2B companies engineer always-on visibility while the category is still being defined. This is the opportunity.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact">
     <h2 class="cta-headline fade-in">
@@ -1113,11 +1204,11 @@
           btn.style.opacity = '0.6';
           form.reset();
         } else {
-          btn.textContent = 'Something went wrong — try again';
+          btn.textContent = 'Something went wrong. Try again.';
           btn.disabled = false;
         }
       } catch {
-        btn.textContent = 'Something went wrong — try again';
+        btn.textContent = 'Something went wrong. Try again.';
         btn.disabled = false;
       }
     }
