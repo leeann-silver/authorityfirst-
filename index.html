@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>On.Visibility | AI Citation Visibility for B2B Brands</title>
+  <meta name="description" content="On.Visibility makes B2B companies discoverable to and cited by AI models. We engineer permanent authority so ChatGPT, Claude, Gemini, and Perplexity cite you, not your competitor." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a2d5a;
+      --gold: #c9a558;
+      --white: #fafaf8;
+      --mid: #5a6a8a;
+      --border: #d8d4cc;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--navy);
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 4rem;
+      background: rgba(250, 250, 248, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s;
+    }
+    nav.scrolled { border-bottom-color: var(--border); }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--navy);
+      text-decoration: none;
+    }
+    .nav-logo span { font-weight: 300; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--navy); }
+
+    .nav-cta {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--white) !important;
+      background: var(--navy);
+      padding: 0.6rem 1.4rem;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.8; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 4rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-headline {
+      font-family: var(--serif);
+      font-size: clamp(3.5rem, 8vw, 8.5rem);
+      font-weight: 300;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      max-width: 14ch;
+      margin-bottom: 3rem;
+    }
+    .hero-headline em {
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .hero-bottom {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--mid);
+      max-width: 38ch;
+      line-height: 1.6;
+    }
+
+    .hero-stat-row {
+      display: flex;
+      gap: 3rem;
+      text-align: right;
+    }
+
+    .hero-stat-num {
+      font-family: var(--serif);
+      font-size: 2.8rem;
+      font-weight: 300;
+      line-height: 1;
+      display: block;
+      color: var(--gold);
+    }
+    .hero-stat-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    .scroll-line {
+      position: absolute;
+      bottom: 0;
+      left: 4rem;
+      width: 1px;
+      height: 60px;
+      background: var(--gold);
+      animation: growLine 1.4s ease-out 0.8s both;
+    }
+    @keyframes growLine {
+      from { transform: scaleY(0); transform-origin: top; }
+      to { transform: scaleY(1); transform-origin: top; }
+    }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 7rem 4rem; }
+
+    .section-tag {
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .section-tag::after {
+      content: '';
+      display: block;
+      width: 2rem;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    /* ── PROBLEM ── */
+    #problem {
+      background: var(--navy);
+      color: var(--white);
+    }
+    #problem .section-tag { color: #888; }
+    #problem .section-tag::after { background: #888; }
+
+    .problem-headline {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 5rem;
+      max-width: 20ch;
+    }
+    .problem-headline em { font-style: italic; }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-top: 1px solid #333;
+    }
+
+    .problem-item {
+      padding: 2.5rem 2rem 2.5rem 0;
+      border-right: 1px solid #333;
+    }
+    .problem-item:last-child { border-right: none; }
+    .problem-item:not(:first-child) { padding-left: 2rem; }
+
+    .problem-num {
+      font-family: var(--serif);
+      font-size: 3rem;
+      font-weight: 300;
+      color: rgba(201, 165, 88, 0.4);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .problem-text {
+      font-size: 0.9rem;
+      color: #aaa;
+      line-height: 1.6;
+    }
+
+    /* ── FRAMEWORK ── */
+    #framework {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .framework-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 5rem;
+    }
+
+    .framework-headline {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    .framework-headline em { font-style: italic; }
+
+    .framework-desc {
+      font-size: 1rem;
+      color: var(--mid);
+      max-width: 40ch;
+      align-self: end;
+    }
+
+    .framework-phases {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border);
+    }
+
+    .phase {
+      padding: 2.5rem 2rem 2.5rem 0;
+      border-right: 1px solid var(--border);
+      cursor: default;
+      transition: background 0.2s;
+    }
+    .phase:last-child { border-right: none; }
+    .phase:not(:first-child) { padding-left: 2rem; }
+    .phase:hover { background: #eef1f8; }
+
+    .phase-label {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 0.5rem;
+    }
+
+    .phase-name {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.25rem;
+      line-height: 1;
+    }
+
+    .phase-divider {
+      width: 1.5rem;
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 1.25rem;
+    }
+
+    .phase-desc {
+      font-size: 0.88rem;
+      color: var(--mid);
+      line-height: 1.65;
+    }
+
+    .phase-outcome {
+      margin-top: 1.5rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding-top: 1rem;
+      border-top: 1px solid rgba(201, 165, 88, 0.3);
+    }
+
+    /* ── HOW IT WORKS ── */
+    #agents {
+      background: #eef1f8;
+    }
+
+    .agents-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    .agents-headline {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 4rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    .agents-headline em { font-style: italic; }
+
+    .agents-desc {
+      font-size: 1rem;
+      color: var(--mid);
+      align-self: end;
+    }
+
+    .agents-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+    }
+
+    .agent-card {
+      background: #eef1f8;
+      padding: 2.5rem;
+      transition: background 0.2s;
+    }
+    .agent-card:hover { background: var(--white); }
+
+    .agent-num {
+      font-family: var(--serif);
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--mid);
+      margin-bottom: 0.25rem;
+    }
+
+    .agent-name {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+
+    .agent-phase {
+      display: inline-block;
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 0.25rem 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .agent-desc {
+      font-size: 0.88rem;
+      color: var(--mid);
+      line-height: 1.65;
+    }
+
+    .agent-schedule {
+      margin-top: 1.5rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--navy);
+    }
+    .agent-schedule::before {
+      content: 'Runs ';
+      color: var(--mid);
+      font-weight: 300;
+    }
+
+    /* ── PRICING ── */
+    #pricing {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pricing-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 4rem;
+    }
+
+    .pricing-headline {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    .pricing-headline em { font-style: italic; }
+
+    .pricing-note {
+      font-size: 0.88rem;
+      color: var(--mid);
+      align-self: end;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--border);
+    }
+
+    .plan {
+      padding: 2.5rem 2rem 2.5rem 0;
+      border-right: 1px solid var(--border);
+    }
+    .plan:last-child { border-right: none; }
+    .plan:not(:first-child) { padding-left: 2rem; }
+    .plan.featured {
+      background: var(--navy);
+      color: var(--white);
+      padding: 2.5rem;
+      margin: -1px;
+    }
+
+    .plan-name {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 1.5rem;
+    }
+    .plan.featured .plan-name { color: #888; }
+    .plan.featured .plan-price { color: var(--gold); }
+
+    .plan-price {
+      font-family: var(--serif);
+      font-size: 3.5rem;
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+
+    .plan-period {
+      font-size: 0.8rem;
+      color: var(--mid);
+      margin-bottom: 2rem;
+    }
+    .plan.featured .plan-period { color: #888; }
+
+    .plan-divider {
+      width: 1.5rem;
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 2rem;
+    }
+    .plan.featured .plan-divider { background: var(--gold); }
+
+    .plan-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .plan-feature {
+      font-size: 0.88rem;
+      color: var(--mid);
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+    }
+    .plan.featured .plan-feature { color: #bbb; }
+    .plan-feature::before {
+      content: '·';
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .plan.featured .plan-feature::before { color: rgba(201, 165, 88, 0.7); }
+
+    .plan-btn {
+      display: block;
+      text-align: center;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.9rem 1.5rem;
+      border: 1px solid var(--border);
+      color: var(--navy);
+      transition: all 0.2s;
+    }
+    .plan-btn:hover {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+    }
+    .plan.featured .plan-btn {
+      background: var(--white);
+      color: var(--navy);
+      border-color: var(--white);
+    }
+    .plan.featured .plan-btn:hover {
+      background: transparent;
+      color: var(--white);
+      border-color: #888;
+    }
+
+    /* ── PROOF ── */
+    #proof {
+      background: var(--navy);
+      color: var(--white);
+    }
+    #proof .section-tag { color: #888; }
+    #proof .section-tag::after { background: #888; }
+
+    .proof-headline {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      max-width: 22ch;
+      margin-bottom: 5rem;
+    }
+    .proof-headline em { font-style: italic; }
+
+    .proof-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid #333;
+    }
+
+    .proof-stat {
+      padding: 3rem 2rem 3rem 0;
+      border-right: 1px solid #333;
+    }
+    .proof-stat:last-child { border-right: none; }
+    .proof-stat:not(:first-child) { padding-left: 2rem; }
+
+    .proof-num {
+      font-family: var(--serif);
+      font-size: 4rem;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      color: var(--gold);
+    }
+
+    .proof-label {
+      font-size: 0.78rem;
+      color: #888;
+      line-height: 1.5;
+    }
+
+    /* ── CTA ── */
+    #contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .cta-headline {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 6rem);
+      font-weight: 300;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+    }
+    .cta-headline em { font-style: italic; }
+
+    .cta-right {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .cta-sub {
+      font-size: 1rem;
+      color: var(--mid);
+      line-height: 1.7;
+    }
+
+    .cta-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .form-field {
+      position: relative;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 0;
+      padding: 1rem 1rem 0.8rem;
+      font-family: var(--sans);
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--navy);
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+      margin-top: -1px;
+      margin-left: -1px;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: var(--navy);
+      position: relative;
+      z-index: 1;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder { color: #aaa; }
+
+    .form-field textarea { resize: none; min-height: 100px; }
+
+    .form-field.full { grid-column: 1 / -1; }
+
+    .form-submit {
+      margin-top: 0;
+      display: block;
+      width: 100%;
+      padding: 1.1rem;
+      background: var(--navy);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      margin-top: -1px;
+    }
+    .form-submit:hover { opacity: 0.8; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2rem 4rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-logo {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--navy);
+      text-decoration: none;
+    }
+    .footer-logo span { font-weight: 300; }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: var(--mid);
+      letter-spacing: 0.05em;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .footer-links a {
+      font-size: 0.72rem;
+      color: var(--mid);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--navy); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1.25rem 1.5rem; }
+      .nav-links { display: none; }
+
+      section { padding: 4rem 1.5rem; }
+      #hero { padding: 0 1.5rem 4rem; }
+
+      .hero-bottom { flex-direction: column; align-items: flex-start; }
+      .hero-stat-row { text-align: left; }
+
+      .problem-grid,
+      .framework-phases,
+      .agents-grid { grid-template-columns: 1fr; }
+
+      .problem-item,
+      .phase,
+      .plan { border-right: none; border-bottom: 1px solid #333; padding: 2rem 0; }
+      .plan { border-bottom-color: var(--border); }
+      .plan:not(:first-child) { padding-left: 0; }
+      .phase:not(:first-child) { padding-left: 0; }
+      .problem-item:not(:first-child) { padding-left: 0; }
+
+      .framework-intro,
+      .agents-intro,
+      .pricing-intro { grid-template-columns: 1fr; gap: 1.5rem; }
+
+      .pricing-grid { grid-template-columns: 1fr; }
+      .plan.featured { margin: 0; }
+
+      .proof-stats { grid-template-columns: 1fr; }
+      .proof-stat { border-right: none; border-bottom: 1px solid #333; padding: 2rem 0; }
+      .proof-stat:not(:first-child) { padding-left: 0; }
+
+      #contact { grid-template-columns: 1fr; gap: 3rem; }
+
+      footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.5rem; }
+      .footer-links { justify-content: center; }
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#" class="nav-logo">On<span>.</span>Visibility</a>
+    <ul class="nav-links">
+      <li><a href="#framework">The Framework</a></li>
+      <li><a href="#agents">How It Works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact" class="nav-cta">Get Started</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="scroll-line"></div>
+    <p class="hero-eyebrow">AI Citation Visibility Consultancy</p>
+    <h1 class="hero-headline fade-in">
+      AI is rewriting<br />who gets<br /><em>found.</em>
+    </h1>
+    <div class="hero-bottom fade-in">
+      <p class="hero-sub">
+        AI Search &amp; Discovery + Comms &rarr; Revenue<br />
+        Influenced Visibility Content Engine.
+      </p>
+      <div class="hero-stat-row">
+        <div>
+          <span class="hero-stat-num">90</span>
+          <span class="hero-stat-label">Days to first placements</span>
+        </div>
+        <div>
+          <span class="hero-stat-num">4</span>
+          <span class="hero-stat-label">AI models tracked weekly</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="problem">
+    <p class="section-tag">The Problem</p>
+    <h2 class="problem-headline fade-in">
+      Your expertise<br />is <em>invisible</em><br />to AI.
+    </h2>
+    <div class="problem-grid">
+      <div class="problem-item fade-in">
+        <div class="problem-num">01</div>
+        <p class="problem-text">Your content isn't structured for AI citation: unlinked claims, scattered data, no schema markup.</p>
+      </div>
+      <div class="problem-item fade-in">
+        <div class="problem-num">02</div>
+        <p class="problem-text">Distribution is random. LinkedIn here, a blog post there. No systematic authority signal.</p>
+      </div>
+      <div class="problem-item fade-in">
+        <div class="problem-num">03</div>
+        <p class="problem-text">Press coverage is sporadic. Authority feels claimed, not earned. LLMs know the difference.</p>
+      </div>
+      <div class="problem-item fade-in">
+        <div class="problem-num">04</div>
+        <p class="problem-text">You have zero visibility into where you're cited or not by ChatGPT, Claude, Gemini, or Perplexity.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRAMEWORK -->
+  <section id="framework">
+    <p class="section-tag">The Solution</p>
+    <div class="framework-intro">
+      <h2 class="framework-headline fade-in">
+        Build. Broadcast.<br />Bulletproof.<br /><em>Benchmark.</em>
+      </h2>
+      <p class="framework-desc fade-in">
+        Four phases. Four specialized AI agents. One mission: make you undeniable to the models your buyers trust.
+      </p>
+    </div>
+    <div class="framework-phases">
+      <div class="phase fade-in">
+        <p class="phase-label">Phase 01</p>
+        <h3 class="phase-name">Build</h3>
+        <div class="phase-divider"></div>
+        <p class="phase-desc">Structured anchor articles of 1,800+ words with FAQs, data, entity copy, and schema markup, engineered for LLM ingestion. Not content for humans. Content that AI models cite.</p>
+        <p class="phase-outcome">Permanent authority records</p>
+      </div>
+      <div class="phase fade-in">
+        <p class="phase-label">Phase 02</p>
+        <h3 class="phase-name">Broadcast</h3>
+        <div class="phase-divider"></div>
+        <p class="phase-desc">One approved article reaches five surfaces: company blog, LinkedIn, Substack, press wire, newsroom, and authority platforms. Multi-surface distribution compounds your citation signal.</p>
+        <p class="phase-outcome">One story, five surfaces</p>
+      </div>
+      <div class="phase fade-in">
+        <p class="phase-label">Phase 03</p>
+        <h3 class="phase-name">Bulletproof</h3>
+        <div class="phase-divider"></div>
+        <p class="phase-desc">5 tier-1 outlet placements in 90 days. Earned media feeds both human readers and LLM training, providing third-party validation that turns claimed authority into documented authority.</p>
+        <p class="phase-outcome">Documented authority, earned</p>
+      </div>
+      <div class="phase fade-in">
+        <p class="phase-label">Phase 04</p>
+        <h3 class="phase-name">Benchmark</h3>
+        <div class="phase-divider"></div>
+        <p class="phase-desc">Weekly probes across ChatGPT, Claude, Gemini, and Perplexity. Answer Share, Citation Footprint, Prompt Presence, tracked and reported so you can see exactly what's working.</p>
+        <p class="phase-outcome">Weekly citation measurement</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="agents">
+    <p class="section-tag">How It Works</p>
+    <div class="agents-intro">
+      <h2 class="agents-headline fade-in">
+        The<br /><em>Operating</em><br />Model.
+      </h2>
+      <p class="agents-desc fade-in">
+        On.Visibility runs as a precision operation. Specialized AI agents execute each phase of the framework on a defined schedule, with human approval at every critical gate.
+      </p>
+    </div>
+    <div class="agents-grid">
+      <div class="agent-card fade-in">
+        <p class="agent-num">Phase 01</p>
+        <h3 class="agent-name">Topic &amp; Authority Analyst</h3>
+        <span class="agent-phase">Build</span>
+        <p class="agent-desc">Researches 20–30 questions your buyers are asking. Identifies who gets cited for each, and where you're invisible. Maps gaps against competitors. Outputs a monthly content roadmap targeting the topics that matter most.</p>
+        <p class="agent-schedule">Monthly</p>
+      </div>
+      <div class="agent-card fade-in">
+        <p class="agent-num">Phase 02</p>
+        <h3 class="agent-name">Content Structuring Engine</h3>
+        <span class="agent-phase">Build</span>
+        <p class="agent-desc">Drafts 1,800–2,500 word anchor articles with H2 structure, FAQ sections, cited data, and schema markup. Writes in your brand voice. Produces 2–3 articles per week for client approval before any distribution.</p>
+        <p class="agent-schedule">Twice weekly</p>
+      </div>
+      <div class="agent-card fade-in">
+        <p class="agent-num">Phase 03</p>
+        <h3 class="agent-name">Multi-Surface Distribution</h3>
+        <span class="agent-phase">Broadcast</span>
+        <p class="agent-desc">The moment an article is approved, this agent adapts and publishes across five channels: company blog (SEO + schema), LinkedIn, press wire, newsroom, and authority platforms. On.Visibility handles all distribution and formatting.</p>
+        <p class="agent-schedule">On approval</p>
+      </div>
+      <div class="agent-card fade-in">
+        <p class="agent-num">Phase 04</p>
+        <h3 class="agent-name">Citation Tracking &amp; Measurement</h3>
+        <span class="agent-phase">Benchmark</span>
+        <p class="agent-desc">Probes ChatGPT, Claude, Gemini, and Perplexity with 20–30 queries from your domain. Records Answer Share, Citation Footprint, and Prompt Presence. Delivers a weekly report with trends, wins, and next priorities.</p>
+        <p class="agent-schedule">Weekly</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <p class="section-tag">Pricing</p>
+    <div class="pricing-intro">
+      <h2 class="pricing-headline fade-in">
+        Recurring<br />authority.<br /><em>Measured.</em>
+      </h2>
+      <p class="pricing-note fade-in">
+        All tiers are contracted annually with monthly delivery. Citation measurement is included at every level.
+      </p>
+    </div>
+    <div class="pricing-grid">
+      <div class="plan fade-in">
+        <p class="plan-name">Starter</p>
+        <p class="plan-price">$2,500</p>
+        <p class="plan-period">per month</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature">2 anchor articles / month</li>
+          <li class="plan-feature">Multi-surface distribution</li>
+          <li class="plan-feature">2–3 press placements / quarter</li>
+          <li class="plan-feature">Weekly citation report</li>
+          <li class="plan-feature">ChatGPT, Claude, Gemini, Perplexity tracking</li>
+        </ul>
+        <a href="#contact" class="plan-btn">Get Started</a>
+      </div>
+      <div class="plan featured fade-in">
+        <p class="plan-name">Growth</p>
+        <p class="plan-price">$5,000</p>
+        <p class="plan-period">per month</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature">4 anchor articles / month</li>
+          <li class="plan-feature">Multi-surface distribution</li>
+          <li class="plan-feature">5–7 press placements / quarter</li>
+          <li class="plan-feature">Weekly citation report</li>
+          <li class="plan-feature">Monthly 30-min strategy call</li>
+          <li class="plan-feature">Competitor citation tracking</li>
+        </ul>
+        <a href="#contact" class="plan-btn">Get Started</a>
+      </div>
+      <div class="plan fade-in">
+        <p class="plan-name">Enterprise</p>
+        <p class="plan-price">$10K<span style="font-size:2rem">+</span></p>
+        <p class="plan-period">per month</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature">8+ anchor articles / month</li>
+          <li class="plan-feature">Multi-surface distribution</li>
+          <li class="plan-feature">10+ press placements / quarter</li>
+          <li class="plan-feature">Custom weekly citation reporting</li>
+          <li class="plan-feature">Monthly strategy call</li>
+          <li class="plan-feature">Bespoke authority roadmap</li>
+        </ul>
+        <a href="#contact" class="plan-btn">Talk to Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF -->
+  <section id="proof">
+    <p class="section-tag">Why Now</p>
+    <h2 class="proof-headline fade-in">
+      The window to<br />own your category<br />in AI is <em>open.</em><br />Not for long.
+    </h2>
+    <div class="proof-stats">
+      <div class="proof-stat fade-in">
+        <p class="proof-num">4</p>
+        <p class="proof-label">AI models your buyers consult daily:<br />ChatGPT, Claude, Gemini, Perplexity</p>
+      </div>
+      <div class="proof-stat fade-in">
+        <p class="proof-num">90</p>
+        <p class="proof-label">Days to 5 tier-1 press placements,<br />earned authority, fast</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2 class="cta-headline fade-in">
+      Be the<br />source<br />AI <em>cites.</em>
+    </h2>
+    <div class="cta-right fade-in">
+      <p class="cta-sub">
+        Tell us about your brand, your category, and your goals. We'll map exactly where you're invisible, and how we close the gap.
+      </p>
+      <form class="cta-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-field">
+            <input type="text" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-field">
+            <input type="email" name="email" placeholder="Work email" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <input type="text" name="company" placeholder="Company" required />
+          </div>
+          <div class="form-field">
+            <select name="tier">
+              <option value="" disabled selected>Interested in...</option>
+              <option value="starter">Starter: $2,500/mo</option>
+              <option value="growth">Growth: $5,000/mo</option>
+              <option value="enterprise">Enterprise: $10K+/mo</option>
+              <option value="unsure">Not sure yet</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field full">
+          <textarea name="message" placeholder="What does your AI visibility look like today? What are you trying to own?" rows="4"></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="#" class="footer-logo">On<span>.</span>Visibility</a>
+    <p class="footer-copy">&copy; 2026 On.Visibility. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="#framework">Framework</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    // Nav scroll state
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Form submission via Formspree
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const btn = form.querySelector('.form-submit');
+
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      try {
+        const response = await fetch('https://formspree.io/f/xojbejyz', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          btn.textContent = 'Message Sent';
+          btn.style.opacity = '0.6';
+          form.reset();
+        } else {
+          btn.textContent = 'Something went wrong — try again';
+          btn.disabled = false;
+        }
+      } catch {
+        btn.textContent = 'Something went wrong — try again';
+        btn.disabled = false;
+      }
+    }
+  </script>
+
+</body>
+</html>
