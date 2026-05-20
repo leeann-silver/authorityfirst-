@@ -199,6 +199,74 @@
       background: var(--gold);
     }
 
+    /* ── WHY THIS MATTERS ── */
+    #why {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .why-headline {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 3rem;
+      max-width: 18ch;
+    }
+    .why-headline em { font-style: italic; }
+
+    .why-body {
+      font-size: 1rem;
+      color: var(--mid);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+
+    .why-conclusion {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 1rem;
+      color: var(--navy);
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .why-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .why-pillar {
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .why-pillar-label {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .why-pillar-desc {
+      font-size: 0.88rem;
+      color: var(--mid);
+      line-height: 1.65;
+    }
+
     /* ── PROBLEM ── */
     #problem {
       background: var(--navy);
@@ -308,6 +376,15 @@
       letter-spacing: -0.01em;
       margin-bottom: 1.25rem;
       line-height: 1;
+    }
+
+    .phase-subtitle {
+      font-size: 0.82rem;
+      color: var(--navy);
+      line-height: 1.6;
+      margin-top: 0.5rem;
+      margin-bottom: 1.25rem;
+      font-weight: 400;
     }
 
     .phase-divider {
@@ -421,6 +498,39 @@
       content: 'Runs ';
       color: var(--mid);
       font-weight: 300;
+    }
+
+    .agents-cta-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-top: 1px;
+    }
+
+    .agents-cta-item {
+      background: #eef1f8;
+      padding: 1.5rem 2rem;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: background 0.2s;
+      cursor: default;
+    }
+    .agents-cta-item:hover { background: var(--white); }
+    .agents-cta-item::before {
+      content: '';
+      display: block;
+      width: 1.5rem;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
     }
 
     /* ── PRICING ── */
@@ -780,11 +890,18 @@
 
     /* ── FOOTER ── */
     footer {
-      padding: 2rem 4rem;
+      padding: 3rem 4rem;
       border-top: 1px solid var(--border);
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
+      gap: 3rem;
+    }
+
+    .footer-left {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
     }
 
     .footer-logo {
@@ -795,6 +912,21 @@
       text-decoration: none;
     }
     .footer-logo span { font-weight: 300; }
+
+    .footer-tagline {
+      font-size: 0.82rem;
+      color: var(--mid);
+      line-height: 1.6;
+      max-width: 38ch;
+      font-style: italic;
+    }
+
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 1rem;
+    }
 
     .footer-copy {
       font-size: 0.72rem;
@@ -850,12 +982,16 @@
       .proof-stat { border-right: none; border-bottom: 1px solid #333; padding: 2rem 0; }
       .proof-stat:not(:first-child) { padding-left: 0; }
 
+      .why-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .agents-cta-strip { grid-template-columns: 1fr 1fr; }
+
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .about-photo { position: static; }
       #contact { grid-template-columns: 1fr; gap: 3rem; }
 
-      footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.5rem; }
-      .footer-links { justify-content: center; }
+      footer { flex-direction: column; align-items: flex-start; gap: 2rem; padding: 2rem 1.5rem; }
+      .footer-right { align-items: flex-start; }
+      .footer-links { justify-content: flex-start; }
     }
 
     /* ── ANIMATIONS ── */
@@ -876,6 +1012,7 @@
   <nav id="nav">
     <a href="#" class="nav-logo">On<span>.</span>Visibility</a>
     <ul class="nav-links">
+      <li><a href="#why">Why It Matters</a></li>
       <li><a href="#framework">The Framework</a></li>
       <li><a href="#agents">How It Works</a></li>
       <li><a href="#pricing">Pricing</a></li>
@@ -887,7 +1024,7 @@
   <!-- HERO -->
   <section id="hero">
     <div class="scroll-line"></div>
-    <p class="hero-eyebrow">AI Citation Visibility Consultancy</p>
+    <p class="hero-eyebrow">Strategic Intelligence Firm</p>
     <h1 class="hero-headline fade-in">
       AI is rewriting<br />who gets<br /><em>found.</em>
     </h1>
@@ -935,42 +1072,84 @@
     </div>
   </section>
 
+  <!-- WHY THIS MATTERS -->
+  <section id="why">
+    <p class="section-tag">Why This Matters</p>
+    <div class="why-grid">
+      <div>
+        <h2 class="why-headline fade-in">
+          Your next customer<br />may never<br /><em>visit Google.</em>
+        </h2>
+        <p class="why-body fade-in">
+          Buyers increasingly rely on ChatGPT, Gemini, Claude, Perplexity, and AI-powered search experiences to evaluate products, compare companies, and make decisions.
+        </p>
+        <p class="why-body fade-in">
+          The brands that surface repeatedly and credibly gain an enormous advantage.
+        </p>
+        <p class="why-body fade-in">
+          Visibility is no longer just about rankings. It is about recommendation.
+        </p>
+        <p class="why-conclusion fade-in">
+          On.Visibility helps brands build the intelligence and reputation systems behind those recommendations.
+        </p>
+      </div>
+      <div class="why-pillars fade-in">
+        <div class="why-pillar">
+          <p class="why-pillar-label">Strategic Intelligence Firm</p>
+          <p class="why-pillar-desc">Tracking citation gaps, competitive visibility, and LLM recommendation patterns across your category.</p>
+        </div>
+        <div class="why-pillar">
+          <p class="why-pillar-label">Brand Infrastructure Consultancy</p>
+          <p class="why-pillar-desc">Building the content architecture, entity signals, and distribution systems that AI models rely on.</p>
+        </div>
+        <div class="why-pillar">
+          <p class="why-pillar-label">Reputation Architecture for AI Discovery</p>
+          <p class="why-pillar-desc">Engineering the documented authority that turns unknown brands into AI-recommended brands.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FRAMEWORK -->
   <section id="framework">
     <p class="section-tag">The Solution</p>
     <div class="framework-intro">
       <h2 class="framework-headline fade-in">
-        Build. Broadcast.<br />Bulletproof.<br /><em>Benchmark.</em>
+        Build. Broadcast.<br /><em>Bulletproof.</em><br />Benchmark.
       </h2>
       <p class="framework-desc fade-in">
-        Four phases. Four specialized AI agents. One mission: make you undeniable to the models your buyers trust.
+        Four phases. Four specialized AI agents. One mission: make you dominant to the models your buyers trust.
       </p>
     </div>
     <div class="framework-phases">
       <div class="phase fade-in">
         <p class="phase-label">Phase 01</p>
-        <h3 class="phase-name">Build</h3>
+        <h3 class="phase-name">Build Visibility Intelligence</h3>
+        <p class="phase-subtitle">Understand how AI models interpret your brand, category, competitors, and authority signals across the ecosystem.</p>
         <div class="phase-divider"></div>
         <p class="phase-desc">Structured anchor articles of 1,800+ words with FAQs, data, entity copy, and schema markup, engineered for LLM ingestion. Not content for humans. Content that AI models cite.</p>
         <p class="phase-outcome">Permanent authority records</p>
       </div>
       <div class="phase fade-in">
         <p class="phase-label">Phase 02</p>
-        <h3 class="phase-name">Broadcast</h3>
+        <h3 class="phase-name">Broadcast Trusted Signals</h3>
+        <p class="phase-subtitle">Expand your digital authority through content, citations, entities, and structured signals that influence AI recommendations.</p>
         <div class="phase-divider"></div>
         <p class="phase-desc">One approved article reaches five surfaces: company blog, LinkedIn, Substack, press wire, newsroom, and authority platforms. Multi-surface distribution compounds your citation signal.</p>
         <p class="phase-outcome">One story, five surfaces</p>
       </div>
       <div class="phase fade-in">
         <p class="phase-label">Phase 03</p>
-        <h3 class="phase-name">Bulletproof</h3>
+        <h3 class="phase-name">Bulletproof Your AI Reputation Layer</h3>
+        <p class="phase-subtitle">Strengthen consistency, credibility, and authority so your brand is accurately understood and confidently recommended by AI models.</p>
         <div class="phase-divider"></div>
         <p class="phase-desc">5 tier-1 outlet placements in 90 days. Earned media feeds both human readers and LLM training, providing third-party validation that turns claimed authority into documented authority.</p>
         <p class="phase-outcome">Documented authority, earned</p>
       </div>
       <div class="phase fade-in">
         <p class="phase-label">Phase 04</p>
-        <h3 class="phase-name">Benchmark</h3>
+        <h3 class="phase-name">Benchmark Model Trust</h3>
+        <p class="phase-subtitle">Monitor how your brand appears, performs, and evolves across the models your buyers trust.</p>
         <div class="phase-divider"></div>
         <p class="phase-desc">Weekly probes across ChatGPT, Claude, Gemini, and Perplexity. Answer Share, Citation Footprint, Prompt Presence, tracked and reported so you can see exactly what's working.</p>
         <p class="phase-outcome">Weekly citation measurement</p>
@@ -1018,6 +1197,12 @@
         <p class="agent-desc">Probes ChatGPT, Claude, Gemini, and Perplexity with 20–30 queries from your domain. Records Answer Share, Citation Footprint, and Prompt Presence. Delivers a weekly report with trends, wins, and next priorities.</p>
         <p class="agent-schedule">Weekly</p>
       </div>
+    </div>
+    <div class="agents-cta-strip">
+      <div class="agents-cta-item">Strengthen Your AI Reputation Layer</div>
+      <div class="agents-cta-item">Audit Your Visibility Intelligence</div>
+      <div class="agents-cta-item">See How AI Models Interpret Your Brand</div>
+      <div class="agents-cta-item">Measure Your Presence Across Trusted Models</div>
     </div>
   </section>
 
@@ -1159,13 +1344,18 @@
 
   <!-- FOOTER -->
   <footer>
-    <a href="#" class="footer-logo">On<span>.</span>Visibility</a>
-    <p class="footer-copy">&copy; 2026 On.Visibility. All rights reserved.</p>
-    <ul class="footer-links">
-      <li><a href="#framework">Framework</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="footer-left">
+      <a href="#" class="footer-logo">On<span>.</span>Visibility</a>
+      <p class="footer-tagline">Helping brands earn recommendation visibility across the models buyers trust.</p>
+    </div>
+    <div class="footer-right">
+      <ul class="footer-links">
+        <li><a href="#framework">Framework</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 On.Visibility. All rights reserved.</p>
+    </div>
   </footer>
 
   <script>
