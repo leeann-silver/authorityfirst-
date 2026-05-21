@@ -316,32 +316,39 @@
     }
     .problem-headline em { font-style: italic; }
 
-    .problem-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      border-top: 1px solid #333;
-    }
-
-    .problem-item {
-      padding: 2.5rem 2rem 2.5rem 0;
-      border-right: 1px solid #333;
-    }
-    .problem-item:last-child { border-right: none; }
-    .problem-item:not(:first-child) { padding-left: 2rem; }
-
-    .problem-num {
+    .problem-lead {
       font-family: var(--serif);
-      font-size: 3rem;
+      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
       font-weight: 300;
-      color: rgba(201, 165, 88, 0.4);
-      line-height: 1;
-      margin-bottom: 1rem;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 3rem;
+      max-width: 32ch;
     }
-    .problem-text {
-      font-size: 0.9rem;
+
+    .problem-text-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+      border-top: 1px solid #333;
+      padding-top: 2.5rem;
+    }
+
+    .problem-para {
+      font-size: 1rem;
       color: #aaa;
-      line-height: 1.6;
+      line-height: 1.8;
+    }
+
+    .problem-conclusion {
+      font-family: var(--serif);
+      font-size: clamp(1.3rem, 2vw, 1.8rem);
+      font-weight: 300;
+      color: var(--gold);
+      border-top: 1px solid #333;
+      padding-top: 2rem;
+      font-style: italic;
     }
 
     /* ── FRAMEWORK ── */
@@ -997,17 +1004,15 @@
       .hero-bottom { flex-direction: column; align-items: flex-start; }
       .hero-stat-row { text-align: left; }
 
-      .problem-grid,
+      .problem-text-grid,
       .framework-phases,
       .agents-grid { grid-template-columns: 1fr; }
 
-      .problem-item,
       .phase,
       .plan { border-right: none; border-bottom: 1px solid #333; padding: 2rem 0; }
       .plan { border-bottom-color: var(--border); }
       .plan:not(:first-child) { padding-left: 0; }
       .phase:not(:first-child) { padding-left: 0; }
-      .problem-item:not(:first-child) { padding-left: 0; }
 
       .framework-intro,
       .agents-intro,
@@ -1095,24 +1100,12 @@
     <h2 class="problem-headline fade-in">
       Your expertise<br />is <em>invisible</em><br />to AI.
     </h2>
-    <div class="problem-grid">
-      <div class="problem-item fade-in">
-        <div class="problem-num">01</div>
-        <p class="problem-text">Your content isn't structured for AI citation: unlinked claims, scattered data, no schema markup.</p>
-      </div>
-      <div class="problem-item fade-in">
-        <div class="problem-num">02</div>
-        <p class="problem-text">Distribution is random. LinkedIn here, a blog post there. No systematic authority signal.</p>
-      </div>
-      <div class="problem-item fade-in">
-        <div class="problem-num">03</div>
-        <p class="problem-text">Press coverage is sporadic. Authority feels claimed, not earned. LLMs know the difference.</p>
-      </div>
-      <div class="problem-item fade-in">
-        <div class="problem-num">04</div>
-        <p class="problem-text">You have zero visibility into where you're cited or not by ChatGPT, Claude, Gemini, or Perplexity.</p>
-      </div>
+    <p class="problem-lead fade-in">You're optimized for a discovery paradigm that no longer exists.</p>
+    <div class="problem-text-grid">
+      <p class="problem-para fade-in">Brands used to win search. Now they win recommendation: inclusion in the AI-generated answers your buyers trust most.</p>
+      <p class="problem-para fade-in">Your expertise is visible to humans but invisible to AI. Your authority is claimed, not documented. Your positioning is scattered, not systematic. When Claude or ChatGPT answers a question in your category, you're not in it.</p>
     </div>
+    <p class="problem-conclusion fade-in">That's not a visibility problem. That's an infrastructure problem.</p>
   </section>
 
   <!-- WHY THIS MATTERS -->
