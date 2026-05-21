@@ -869,6 +869,110 @@
     }
     .plan.featured .plan-feature::before { color: rgba(201, 165, 88, 0.7); }
 
+    .plan-subtitle {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+    }
+    .plan.featured .plan-subtitle { color: var(--gold); }
+
+    .plan-section-label {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .plan.featured .plan-section-label { color: var(--gold); }
+
+    .plan-results-note {
+      font-size: 0.78rem;
+      color: var(--mid);
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+    .plan.featured .plan-results-note { color: #aaa; }
+
+    .plan-ideal {
+      font-size: 0.85rem;
+      color: var(--mid);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+    .plan.featured .plan-ideal { color: #bbb; }
+
+    .pricing-disclaimer {
+      border-top: 1px solid var(--border);
+      padding-top: 3rem;
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .pricing-disclaimer-title {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mid);
+      padding-top: 0.2rem;
+    }
+
+    .pricing-disclaimer-body {
+      font-size: 0.88rem;
+      color: var(--mid);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+    .pricing-disclaimer-body:last-child { margin-bottom: 0; }
+
+    .pricing-fit {
+      border-top: 1px solid var(--border);
+      padding-top: 3.5rem;
+      margin-top: 3.5rem;
+      text-align: center;
+    }
+
+    .pricing-fit-title {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+      font-weight: 300;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .pricing-fit-body {
+      font-size: 0.95rem;
+      color: var(--mid);
+      margin-bottom: 2rem;
+      max-width: 40ch;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    .pricing-fit-btn {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-fit-desc {
+      font-size: 0.85rem;
+      color: var(--mid);
+      max-width: 50ch;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
     .plan-btn {
       display: block;
       text-align: center;
@@ -1688,55 +1792,111 @@
         Recurring<br />authority.<br /><em>Measured.</em>
       </h2>
       <p class="pricing-note fade-in">
-        Citation measurement is included at every level. Pricing details coming soon.
+        We don't guess at results, we show you what's realistic based on our client data. All tiers include citation measurement and monthly reporting.
       </p>
     </div>
     <div class="pricing-grid">
+
+      <!-- Starter -->
       <div class="plan fade-in">
         <p class="plan-name">Starter</p>
+        <p class="plan-subtitle">Foundation Authority</p>
         <p class="plan-price">Pricing TK</p>
-        <p class="plan-period">&nbsp;</p>
         <div class="plan-divider"></div>
+        <p class="plan-section-label">What We Do</p>
         <ul class="plan-features">
-          <li class="plan-feature">2 anchor articles / month</li>
-          <li class="plan-feature">Multi-surface distribution</li>
-          <li class="plan-feature">2–3 press placements / quarter</li>
-          <li class="plan-feature">Weekly citation report</li>
-          <li class="plan-feature">ChatGPT, Claude, Gemini, Perplexity tracking</li>
+          <li class="plan-feature">2 anchor articles / month (structured for AI comprehension)</li>
+          <li class="plan-feature">Multi-surface distribution (blog, LinkedIn, Substack, press wire, newsroom)</li>
+          <li class="plan-feature">Strategic outreach to 8&ndash;10 tier-1 outlets / quarter</li>
+          <li class="plan-feature">Weekly citation report (ChatGPT, Claude, Gemini, Perplexity)</li>
         </ul>
+        <p class="plan-section-label">Typical Results</p>
+        <p class="plan-results-note">Based on historical client data:</p>
+        <ul class="plan-features">
+          <li class="plan-feature">2&ndash;3 press placements / quarter</li>
+          <li class="plan-feature">10&ndash;15% citation footprint in your category</li>
+          <li class="plan-feature">Initial visibility in AI model answers</li>
+        </ul>
+        <p class="plan-section-label">Ideal For</p>
+        <p class="plan-ideal">Emerging brands, single-category focus, testing the model</p>
         <a href="#contact" class="plan-btn">Audit Your AI Visibility</a>
       </div>
+
+      <!-- Growth -->
       <div class="plan featured fade-in">
         <p class="plan-name">Growth</p>
+        <p class="plan-subtitle">Distributed Authority</p>
         <p class="plan-price">Pricing TK</p>
-        <p class="plan-period">&nbsp;</p>
         <div class="plan-divider"></div>
+        <p class="plan-section-label">What We Do</p>
         <ul class="plan-features">
-          <li class="plan-feature">4 anchor articles / month</li>
-          <li class="plan-feature">Multi-surface distribution</li>
-          <li class="plan-feature">5–7 press placements / quarter</li>
-          <li class="plan-feature">Weekly citation report</li>
+          <li class="plan-feature">4 anchor articles / month (expanded topic coverage)</li>
+          <li class="plan-feature">Multi-surface distribution (blog, LinkedIn, Substack, press wire, newsroom, authority platforms)</li>
+          <li class="plan-feature">Strategic outreach to 15&ndash;20 tier-1 outlets / quarter</li>
           <li class="plan-feature">Monthly 30-min strategy call</li>
           <li class="plan-feature">Competitor citation tracking</li>
+          <li class="plan-feature">Weekly citation report with trend analysis</li>
         </ul>
+        <p class="plan-section-label">Typical Results</p>
+        <p class="plan-results-note">Based on historical client data:</p>
+        <ul class="plan-features">
+          <li class="plan-feature">5&ndash;7 press placements / quarter</li>
+          <li class="plan-feature">20&ndash;30% citation footprint in your category</li>
+          <li class="plan-feature">Measurable recommendation visibility across models</li>
+          <li class="plan-feature">Competitive positioning visible</li>
+        </ul>
+        <p class="plan-section-label">Ideal For</p>
+        <p class="plan-ideal">Growth-stage companies, multi-topic authority, expanding category presence</p>
         <a href="#contact" class="plan-btn">See How AI Describes Your Brand</a>
       </div>
+
+      <!-- Enterprise -->
       <div class="plan fade-in">
         <p class="plan-name">Enterprise</p>
+        <p class="plan-subtitle">Category Authority Leadership</p>
         <p class="plan-price">Pricing TK</p>
-        <p class="plan-period">&nbsp;</p>
         <div class="plan-divider"></div>
+        <p class="plan-section-label">What We Do</p>
         <ul class="plan-features">
-          <li class="plan-feature">8+ anchor articles / month</li>
-          <li class="plan-feature">Multi-surface distribution</li>
-          <li class="plan-feature">10+ press placements / quarter</li>
-          <li class="plan-feature">Custom weekly citation reporting</li>
-          <li class="plan-feature">Monthly strategy call</li>
-          <li class="plan-feature">Bespoke authority roadmap</li>
+          <li class="plan-feature">8+ anchor articles / month (comprehensive topic coverage)</li>
+          <li class="plan-feature">Multi-surface distribution (all channels + premium authority platforms)</li>
+          <li class="plan-feature">Strategic outreach to 25&ndash;30 tier-1 outlets / quarter</li>
+          <li class="plan-feature">Monthly strategy call (dedicated, strategic focus)</li>
+          <li class="plan-feature">Bespoke authority roadmap (custom quarterly planning)</li>
+          <li class="plan-feature">Custom weekly citation reporting (tailored metrics)</li>
         </ul>
+        <p class="plan-section-label">Typical Results</p>
+        <p class="plan-results-note">Based on historical client data:</p>
+        <ul class="plan-features">
+          <li class="plan-feature">10+ press placements / quarter</li>
+          <li class="plan-feature">30&ndash;40%+ citation footprint in your category</li>
+          <li class="plan-feature">Positioned as category authority across models</li>
+          <li class="plan-feature">Own-category positioning: your brand = go-to source</li>
+        </ul>
+        <p class="plan-section-label">Ideal For</p>
+        <p class="plan-ideal">Enterprise brands, market leaders, category creation, maximizing authority infrastructure</p>
         <a href="#contact" class="plan-btn">Talk to Us</a>
       </div>
+
     </div>
+
+    <!-- What These Numbers Mean -->
+    <div class="pricing-disclaimer fade-in">
+      <p class="pricing-disclaimer-title">What These Numbers Mean</p>
+      <div>
+        <p class="pricing-disclaimer-body">"Typical Results" are based on our client averages. Actual outcomes depend on your starting visibility (emerging vs. established), market conditions in your category, how well your expertise aligns with category authority, and execution quality and client responsiveness.</p>
+        <p class="pricing-disclaimer-body">We guarantee the effort (articles, outreach, measurement). We target the results. We measure relentlessly and adjust strategy monthly.</p>
+      </div>
+    </div>
+
+    <!-- Find Your Fit -->
+    <div class="pricing-fit fade-in">
+      <p class="pricing-fit-title">Find Your Fit</p>
+      <p class="pricing-fit-body">Each tier is designed for a specific stage and goal. Not sure which is right for you?</p>
+      <a href="#contact" class="plan-btn pricing-fit-btn">Schedule a Free Visibility Audit</a>
+      <p class="pricing-fit-desc">We'll show you your current AI visibility, competitive positioning, and what a realistic 90-day plan looks like for your brand.</p>
+    </div>
+
   </section>
 
   <!-- PROOF -->
