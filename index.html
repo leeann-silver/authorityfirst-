@@ -297,6 +297,53 @@
       line-height: 1.65;
     }
 
+    /* ── COMPARISON ── */
+    #comparison {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .comparison-table {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border: 1px solid var(--border);
+    }
+
+    .comparison-header {
+      padding: 1.25rem 2rem;
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--border);
+    }
+    .comparison-header.trad {
+      color: var(--mid);
+      border-right: 1px solid var(--border);
+    }
+    .comparison-header.ours {
+      color: var(--navy);
+      background: #eef1f8;
+    }
+
+    .comparison-cell {
+      padding: 1.25rem 2rem;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      border-bottom: 1px solid var(--border);
+    }
+    .comparison-cell:last-child,
+    .comparison-cell:nth-last-child(2) { border-bottom: none; }
+    .comparison-cell.trad {
+      color: var(--mid);
+      border-right: 1px solid var(--border);
+    }
+    .comparison-cell.ours {
+      color: var(--navy);
+      font-weight: 400;
+      background: #f4f6fb;
+    }
+
     /* ── PROBLEM ── */
     #problem {
       background: var(--navy);
@@ -1026,6 +1073,10 @@
       .proof-stat:not(:first-child) { padding-left: 0; }
 
       .why-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .comparison-table { grid-template-columns: 1fr; }
+      .comparison-header.trad,
+      .comparison-cell.trad { border-right: none; border-bottom: 1px solid var(--border); }
+      .comparison-header.ours { border-top: 2px solid var(--navy); }
       .agents-cta-strip { grid-template-columns: 1fr 1fr; }
 
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -1143,6 +1194,33 @@
           <p class="why-pillar-desc">Engineering the documented authority that turns unknown brands into AI-recommended brands.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE ARE NOT -->
+  <section id="comparison">
+    <p class="section-tag">What We Are Not</p>
+    <div class="comparison-table fade-in">
+      <div class="comparison-header trad">Traditional Approach</div>
+      <div class="comparison-header ours">On.Visibility</div>
+
+      <div class="comparison-cell trad">Optimize for search rankings</div>
+      <div class="comparison-cell ours">Optimize for AI recommendation</div>
+
+      <div class="comparison-cell trad">Produce content volume</div>
+      <div class="comparison-cell ours">Build authority infrastructure</div>
+
+      <div class="comparison-cell trad">Chase placements</div>
+      <div class="comparison-cell ours">Engineer documented authority</div>
+
+      <div class="comparison-cell trad">One-time campaigns</div>
+      <div class="comparison-cell ours">12-month systematic approach</div>
+
+      <div class="comparison-cell trad">Metrics: Rankings, mentions</div>
+      <div class="comparison-cell ours">Metrics: Citation footprint, answer share, recommendation visibility</div>
+
+      <div class="comparison-cell trad">Hope visibility compounds</div>
+      <div class="comparison-cell ours">Design visibility to compound</div>
     </div>
   </section>
 
