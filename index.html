@@ -59,7 +59,7 @@
       color: var(--navy);
       text-decoration: none;
     }
-    .nav-logo span { font-weight: 300; }
+    .nav-logo span { font-weight: 500; }
 
     .nav-links {
       display: flex;
@@ -1265,7 +1265,7 @@
       color: var(--navy);
       text-decoration: none;
     }
-    .footer-logo span { font-weight: 300; }
+    .footer-logo span { font-weight: 500; }
 
     .footer-tagline {
       font-size: 0.82rem;
@@ -1281,6 +1281,19 @@
       align-items: flex-end;
       gap: 1rem;
     }
+
+    .footer-instagram {
+      margin-bottom: 0.5rem;
+    }
+    .footer-instagram a {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      color: var(--mid);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .footer-instagram a:hover { color: var(--navy); }
 
     .footer-copy {
       font-size: 0.72rem;
@@ -2037,6 +2050,7 @@
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <p class="footer-instagram"><a href="https://instagram.com/onvisibility" target="_blank" rel="noopener">@onvisibility</a></p>
       <p class="footer-copy">&copy; 2026 On.Visibility. All rights reserved.</p>
     </div>
   </footer>
