@@ -259,6 +259,41 @@
       margin-bottom: 1.25rem;
     }
 
+    .why-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 2rem 0;
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .why-stat-num {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .why-stat-desc {
+      font-size: 0.82rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+
+    .why-stat-source {
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--border);
+      margin-top: 0.4rem;
+    }
+
     .why-conclusion {
       margin-top: 2rem;
       padding-top: 1.5rem;
@@ -1464,8 +1499,18 @@
         <p class="why-body fade-in">
           Visibility is no longer just about rankings. It is about recommendation.
         </p>
+        <div class="why-stats fade-in">
+          <div class="why-stat">
+            <p class="why-stat-num">50%</p>
+            <p class="why-stat-desc">of consumers now prefer AI-powered search over Google.</p>
+          </div>
+          <div class="why-stat">
+            <p class="why-stat-num">$750B</p>
+            <p class="why-stat-desc">in goods and services projected to be purchased through AI-driven search by 2028. <span class="why-stat-source">McKinsey</span></p>
+          </div>
+        </div>
         <p class="why-conclusion fade-in">
-          On.Visibility helps brands build the intelligence and reputation systems behind those recommendations.
+          If you're not cited in those answers, you're invisible to that market. On.Visibility builds the authority infrastructure that puts you in them.
         </p>
       </div>
       <div class="why-diagram fade-in">
@@ -1881,7 +1926,7 @@
       <div class="plan fade-in">
         <p class="plan-name">Foundation</p>
         <p class="plan-subtitle">90-Day Project</p>
-        <p class="plan-price">$3,000 <span class="plan-price-unit">/ month</span></p>
+        <p class="plan-price">Pricing TK</p>
         <div class="plan-divider"></div>
         <p class="plan-section-label">What We Do</p>
         <ul class="plan-features">
@@ -1906,7 +1951,7 @@
       <div class="plan featured fade-in">
         <p class="plan-name">Growth</p>
         <p class="plan-subtitle">6-Month Project</p>
-        <p class="plan-price">$6,000 <span class="plan-price-unit">/ month</span></p>
+        <p class="plan-price">Pricing TK</p>
         <div class="plan-divider"></div>
         <p class="plan-section-label">What We Do</p>
         <ul class="plan-features">
@@ -1934,7 +1979,7 @@
       <div class="plan fade-in">
         <p class="plan-name">Enterprise</p>
         <p class="plan-subtitle">6-Month Project+</p>
-        <p class="plan-price">$10,000 <span class="plan-price-unit">/ month</span></p>
+        <p class="plan-price">Pricing TK</p>
         <div class="plan-divider"></div>
         <p class="plan-section-label">What We Do</p>
         <ul class="plan-features">
