@@ -1461,13 +1461,23 @@
     }
     .plan.featured .plan-section-label { color: var(--gold); }
 
-    .plan-results-note {
-      font-size: 0.78rem;
-      color: var(--mid);
+    .plan-by {
+      font-size: 0.8em;
+      color: var(--gold);
+      font-weight: 400;
       font-style: italic;
-      margin-bottom: 0.5rem;
     }
-    .plan.featured .plan-results-note { color: #aaa; }
+
+    .plan-results-note {
+      font-size: 0.82rem;
+      color: var(--mid);
+      line-height: 1.6;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+    .plan.featured .plan-results-note { color: #aaa; border-top-color: rgba(250,250,248,0.1); }
 
     .plan-ideal {
       font-size: 0.85rem;
@@ -2180,103 +2190,71 @@
     <p class="section-tag">Pricing</p>
     <div class="pricing-intro">
       <h2 class="pricing-headline fade-in">
-        Recurring<br />authority.<br /><em>Measured.</em>
+        Authority<br /><em>Infrastructure.</em>
       </h2>
       <p class="pricing-note fade-in">
-        We don't guess at results, we show you what's realistic based on our client data. All tiers include citation measurement and monthly reporting.
+        I don't guess at results. I show you what's realistic based on my client data. All tiers include weekly citation measurement and monthly reporting.
       </p>
     </div>
     <div class="pricing-grid">
 
-      <!-- Starter -->
+      <!-- Foundation -->
       <div class="plan fade-in">
         <p class="plan-name">Foundation</p>
         <p class="plan-subtitle">90-Day Project</p>
-        <p class="plan-price">Pricing TK</p>
+        <p class="plan-price">$3,000 <span class="plan-price-unit">/ mo</span></p>
         <div class="plan-divider"></div>
-        <p class="plan-section-label">What We Do</p>
         <ul class="plan-features">
-          <li class="plan-feature">2 anchor articles / month (structured for AI comprehension)</li>
-          <li class="plan-feature">Multi-surface distribution (blog, LinkedIn, Substack, press wire, newsroom)</li>
-          <li class="plan-feature">Strategic outreach to 8&ndash;10 tier-1 outlets / quarter</li>
-          <li class="plan-feature">Weekly citation report (ChatGPT, Claude, Gemini, Perplexity)</li>
+          <li class="plan-feature">2 strategic articles / month <span class="plan-by">(written by me)</span></li>
+          <li class="plan-feature">Multi-surface distribution</li>
+          <li class="plan-feature">Outreach to 8&ndash;10 tier-1 outlets / quarter <span class="plan-by">(pitched by me)</span></li>
+          <li class="plan-feature">Weekly citation tracking</li>
         </ul>
-        <p class="plan-section-label">Typical Results</p>
-        <p class="plan-results-note">Based on historical client data:</p>
-        <ul class="plan-features">
-          <li class="plan-feature">2&ndash;3 press placements / quarter</li>
-          <li class="plan-feature">10&ndash;15% citation footprint in your category</li>
-          <li class="plan-feature">Initial visibility in AI model answers</li>
-        </ul>
-        <p class="plan-section-label">Ideal For</p>
-        <p class="plan-ideal">Emerging brands, single-category focus, testing the model</p>
+        <p class="plan-results-note"><strong>Typical results:</strong> 2&ndash;3 press placements / quarter, 10&ndash;15% citation footprint</p>
         <a href="#contact" class="plan-btn">Audit Your AI Visibility</a>
       </div>
 
       <!-- Growth -->
       <div class="plan featured fade-in">
         <p class="plan-name">Growth</p>
-        <p class="plan-subtitle">6-Month Project</p>
-        <p class="plan-price">Pricing TK</p>
+        <p class="plan-subtitle">6-Month Minimum</p>
+        <p class="plan-price">$6,000 <span class="plan-price-unit">/ mo</span></p>
         <div class="plan-divider"></div>
-        <p class="plan-section-label">What We Do</p>
         <ul class="plan-features">
-          <li class="plan-feature">4 anchor articles / month (expanded topic coverage)</li>
-          <li class="plan-feature">Multi-surface distribution (blog, LinkedIn, Substack, press wire, newsroom, authority platforms)</li>
-          <li class="plan-feature">Strategic outreach to 15&ndash;20 tier-1 outlets / quarter</li>
-          <li class="plan-feature">Monthly 30-min strategy call</li>
-          <li class="plan-feature">Competitor citation tracking</li>
-          <li class="plan-feature">Weekly citation report with trend analysis</li>
+          <li class="plan-feature">4 strategic articles / month <span class="plan-by">(written by me)</span></li>
+          <li class="plan-feature">Multi-surface distribution + authority platforms</li>
+          <li class="plan-feature">Outreach to 15&ndash;20 tier-1 outlets / quarter <span class="plan-by">(pitched by me)</span></li>
+          <li class="plan-feature">Monthly strategy call with me</li>
+          <li class="plan-feature">Weekly citation tracking + trend analysis</li>
         </ul>
-        <p class="plan-section-label">Typical Results</p>
-        <p class="plan-results-note">Based on historical client data:</p>
-        <ul class="plan-features">
-          <li class="plan-feature">5&ndash;7 press placements / quarter</li>
-          <li class="plan-feature">20&ndash;30% citation footprint in your category</li>
-          <li class="plan-feature">Measurable recommendation visibility across models</li>
-          <li class="plan-feature">Competitive positioning visible</li>
-        </ul>
-        <p class="plan-section-label">Ideal For</p>
-        <p class="plan-ideal">Growth-stage companies, multi-topic authority, expanding category presence</p>
+        <p class="plan-results-note"><strong>Typical results:</strong> 5&ndash;7 press placements / quarter, 20&ndash;30% citation footprint</p>
         <a href="#contact" class="plan-btn">See How AI Describes Your Brand</a>
       </div>
 
       <!-- Enterprise -->
       <div class="plan fade-in">
         <p class="plan-name">Enterprise</p>
-        <p class="plan-subtitle">6-Month Project+</p>
-        <p class="plan-price">Pricing TK</p>
+        <p class="plan-subtitle">6-Month Minimum</p>
+        <p class="plan-price">$10,000 <span class="plan-price-unit">/ mo</span></p>
         <div class="plan-divider"></div>
-        <p class="plan-section-label">What We Do</p>
         <ul class="plan-features">
-          <li class="plan-feature">8+ anchor articles / month (comprehensive topic coverage)</li>
-          <li class="plan-feature">Multi-surface distribution (all channels + premium authority platforms)</li>
-          <li class="plan-feature">Strategic outreach to 25&ndash;30 tier-1 outlets / quarter</li>
-          <li class="plan-feature">Monthly strategy call (dedicated, strategic focus)</li>
-          <li class="plan-feature">Bespoke authority roadmap (custom quarterly planning)</li>
-          <li class="plan-feature">Custom weekly citation reporting (tailored metrics)</li>
+          <li class="plan-feature">8+ strategic articles / month <span class="plan-by">(written by me)</span></li>
+          <li class="plan-feature">Multi-surface distribution + premium authority platforms</li>
+          <li class="plan-feature">Outreach to 25&ndash;30 tier-1 outlets / quarter <span class="plan-by">(pitched by me)</span></li>
+          <li class="plan-feature">Monthly strategy call with me <span class="plan-by">(dedicated focus)</span></li>
+          <li class="plan-feature">Bespoke quarterly authority roadmap</li>
+          <li class="plan-feature">Custom weekly citation reporting</li>
         </ul>
-        <p class="plan-section-label">Typical Results</p>
-        <p class="plan-results-note">Based on historical client data:</p>
-        <ul class="plan-features">
-          <li class="plan-feature">10+ press placements / quarter</li>
-          <li class="plan-feature">30&ndash;40%+ citation footprint in your category</li>
-          <li class="plan-feature">Positioned as category authority across models</li>
-          <li class="plan-feature">Own-category positioning: your brand = go-to source</li>
-        </ul>
-        <p class="plan-section-label">Ideal For</p>
-        <p class="plan-ideal">Enterprise brands, market leaders, category creation, maximizing authority infrastructure</p>
+        <p class="plan-results-note"><strong>Typical results:</strong> 10+ press placements / quarter, 30&ndash;40%+ citation footprint</p>
         <a href="#contact" class="plan-btn">Talk to Us</a>
       </div>
 
     </div>
 
-    <!-- Find Your Fit -->
     <div class="pricing-fit fade-in">
-      <p class="pricing-fit-title">Find Your Fit</p>
-      <p class="pricing-fit-body">Each tier is designed for a specific stage and goal. Not sure which is right for you?</p>
+      <p class="pricing-fit-title">Not Sure Which Tier?</p>
+      <p class="pricing-fit-body">Schedule a free visibility audit. I'll show you your current AI visibility, competitive positioning, and what a realistic 90-day plan looks like.</p>
       <a href="#contact" class="plan-btn pricing-fit-btn">Schedule a Free Visibility Audit</a>
-      <p class="pricing-fit-desc">We'll show you your current AI visibility, competitive positioning, and what a realistic 90-day plan looks like for your brand.</p>
     </div>
 
   </section>
@@ -2299,7 +2277,7 @@
     </div>
     <p class="proof-body fade-in">For the first time, the brands that control the narrative infrastructure in your category can disproportionately influence how AI systems describe your industry. That advantage compounds. Early movers build documented authority that newer entrants will struggle to match.</p>
     <p class="proof-body fade-in">The question isn't whether narrative matters. It always has. The question is whether you'll engineer it as infrastructure, or hope it happens by accident.</p>
-    <p class="proof-body proof-cta-line fade-in"><strong>We believe the former wins.</strong></p>
+    <p class="proof-body proof-cta-line fade-in"><strong>I believe the former wins.</strong></p>
   </section>
 
   <!-- ABOUT SECTION -->
