@@ -394,6 +394,195 @@
       display: block;
     }
 
+    /* ── WHY LESS WORKS ── */
+    #why-less {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .wl-headline {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 2.5rem;
+    }
+
+    .wl-intro {
+      font-size: 1rem;
+      color: var(--mid);
+      line-height: 1.8;
+      max-width: 62ch;
+      margin-bottom: 3rem;
+    }
+
+    .wl-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin-bottom: 3.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .wl-col {
+      padding: 2.5rem;
+    }
+
+    .wl-col--volume {
+      border-right: 1px solid var(--border);
+    }
+
+    .wl-col--precision {
+      background: var(--navy);
+    }
+
+    .wl-col-label {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.75rem;
+    }
+
+    .wl-list {
+      list-style: none;
+      margin: 0 0 2rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .wl-list li {
+      font-size: 0.875rem;
+      line-height: 1.65;
+      color: var(--mid);
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .wl-list li::before {
+      content: '·';
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .wl-col--precision .wl-list li {
+      color: rgba(250,250,248,0.65);
+    }
+
+    .wl-tier {
+      font-weight: 600;
+      color: var(--navy);
+      flex-shrink: 0;
+    }
+
+    .wl-ai-box {
+      padding: 1rem 1.25rem;
+      background: rgba(201,165,88,0.07);
+      border-left: 2px solid var(--gold);
+      margin-bottom: 2rem;
+    }
+
+    .wl-ai-label {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+
+    .wl-ai-q {
+      font-family: var(--serif);
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--navy);
+      line-height: 1.5;
+    }
+
+    .wl-result {
+      display: flex;
+      align-items: baseline;
+      gap: 1.25rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .wl-col--precision .wl-result {
+      border-top-color: rgba(250,250,248,0.12);
+    }
+
+    .wl-pct {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+
+    .wl-pct--gold {
+      color: var(--gold);
+    }
+
+    .wl-result-desc {
+      font-size: 0.82rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+
+    .wl-col--precision .wl-result-desc {
+      color: rgba(250,250,248,0.6);
+    }
+
+    .wl-verdict {
+      font-family: var(--serif);
+      font-size: clamp(1.25rem, 2vw, 1.85rem);
+      font-weight: 300;
+      color: var(--navy);
+      line-height: 1.4;
+      margin-bottom: 3rem;
+    }
+
+    .wl-quote {
+      border-left: 2px solid var(--gold);
+      padding: 1.25rem 0 1.25rem 2rem;
+      margin: 0 0 2.5rem 0;
+      max-width: 58ch;
+    }
+
+    .wl-quote p {
+      font-family: var(--serif);
+      font-size: clamp(1rem, 1.4vw, 1.3rem);
+      font-weight: 300;
+      color: var(--navy);
+      line-height: 1.55;
+      font-style: italic;
+      margin-bottom: 0.75rem;
+    }
+
+    .wl-quote cite {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid);
+      font-style: normal;
+    }
+
+    .wl-close {
+      font-size: 1rem;
+      color: var(--navy);
+      font-weight: 600;
+      line-height: 1.7;
+    }
+
     /* ── COMPARISON ── */
     #comparison {
       border-bottom: 1px solid var(--border);
@@ -1459,6 +1648,8 @@
       .proof-stat:not(:first-child) { padding-left: 0; }
 
       .why-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .wl-compare { grid-template-columns: 1fr; }
+      .wl-col--volume { border-right: none; border-bottom: 1px solid var(--border); }
       .comparison-table { grid-template-columns: 1fr; }
       .comparison-header.trad,
       .comparison-cell.trad { border-right: none; border-bottom: 1px solid var(--border); }
@@ -1590,6 +1781,55 @@
         </p>
       </div>
     </div>
+  </section>
+
+  <!-- WHY LESS WORKS -->
+  <section id="why-less">
+    <p class="section-tag">The Math of Authority</p>
+    <h2 class="wl-headline fade-in">Why Less Works.</h2>
+    <p class="wl-intro fade-in">A traditional agency lands you 18 placements across 12 outlets in a quarter. Sounds good. But here's what happens:</p>
+
+    <div class="wl-compare fade-in">
+      <div class="wl-col wl-col--volume">
+        <p class="wl-col-label">The Volume Approach</p>
+        <ul class="wl-list">
+          <li><span class="wl-tier">3 tier-1 outlets</span> Financial Times, The Verge, Politico</li>
+          <li><span class="wl-tier">9 mid-tier outlets</span> Industry blogs, LinkedIn newsletters</li>
+          <li><span class="wl-tier">6 niche outlets</span> Your industry's trade sites</li>
+        </ul>
+        <div class="wl-ai-box">
+          <p class="wl-ai-label">How AI evaluates this</p>
+          <p class="wl-ai-q">Is this brand mentioned in sources I trust?</p>
+        </div>
+        <div class="wl-result">
+          <p class="wl-pct">18%</p>
+          <p class="wl-result-desc">of AI answers cite you in your category. Visible, but not dominant.</p>
+        </div>
+      </div>
+
+      <div class="wl-col wl-col--precision">
+        <p class="wl-col-label">The Precision Approach</p>
+        <ul class="wl-list">
+          <li>4 articles, pitched exclusively to tier-1</li>
+          <li>5-7 placements, all in outlets AI systems prioritize</li>
+          <li>Each piece references your previous ones, building narrative consistency</li>
+          <li>Each piece includes data, case studies, proof points (what AI agents value)</li>
+        </ul>
+        <div class="wl-result">
+          <p class="wl-pct wl-pct--gold">30-40%</p>
+          <p class="wl-result-desc">of AI answers cite you. You're not just visible. You're the source.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="wl-verdict fade-in">That's the difference between volume and authority.</p>
+
+    <blockquote class="wl-quote fade-in">
+      <p>"The ones that do less when they can do so much more. I think that's going to be pretty interesting."</p>
+      <cite>Chris Koehler, marketing leader</cite>
+    </blockquote>
+
+    <p class="wl-close fade-in">We agree. That's why we do fewer pieces, smarter.</p>
   </section>
 
   <!-- WHAT WE ARE NOT -->
