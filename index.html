@@ -779,6 +779,68 @@
       line-height: 1.7;
     }
 
+    /* ── WHAT WE DO ── */
+    .whatwedo-not {
+      font-family: var(--serif);
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.5;
+      margin-bottom: 0.35rem;
+    }
+
+    .whatwedo-bio {
+      font-size: 1rem;
+      color: var(--navy);
+      line-height: 1.85;
+      max-width: 62ch;
+      margin: 2rem 0 2.5rem 0;
+    }
+
+    .whatwedo-list-label {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+
+    .whatwedo-list {
+      list-style: none;
+      margin: 0 0 2.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      max-width: 60ch;
+    }
+
+    .whatwedo-list li {
+      font-size: 0.92rem;
+      color: var(--mid);
+      line-height: 1.65;
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+    }
+
+    .whatwedo-list li::before {
+      content: '·';
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .whatwedo-close {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.7;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      max-width: 52ch;
+    }
+
     /* ── COMPARISON ── */
     #comparison {
       border-bottom: 1px solid var(--border);
@@ -1886,8 +1948,8 @@
     <a href="#" class="nav-logo">On<span>.</span>Visibility</a>
     <ul class="nav-links">
       <li><a href="#why">Why It Matters</a></li>
-      <li><a href="#comparison">What We Are Not</a></li>
-      <li><a href="#framework">The Framework</a></li>
+      <li><a href="#comparison">What We Do</a></li>
+      <li><a href="#framework">How This Works</a></li>
       <li><a href="#faq">Q&amp;A</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#about">About</a></li>
@@ -1909,10 +1971,7 @@
     </h1>
     <div class="hero-bottom fade-in">
       <p class="hero-sub">
-        <strong>The brands winning aren't doing more. They're thinking differently.</strong>
-      </p>
-      <p class="hero-sub">
-        Less content, smarter strategy, more intentional placements. While your competitors chase volume, you engineer infrastructure that compounds.
+        <strong>The brands winning in AI aren't doing more. They're thinking differently: fewer placements, documented proof, compounding authority.</strong>
       </p>
       <div class="hero-stat-row">
         <div>
@@ -1979,109 +2038,66 @@
     </div>
   </section>
 
-  <!-- WHAT WE ARE NOT -->
+  <!-- WHAT WE DO -->
   <section id="comparison">
-    <p class="section-tag">What We Are Not</p>
+    <p class="section-tag">What We Do</p>
 
-    <p class="comparison-group-label fade-in">vs. Traditional PR Agency</p>
-    <div class="comparison-table fade-in">
-      <div class="comparison-header trad">Traditional PR Agency</div>
-      <div class="comparison-header ours">On.Visibility</div>
-
-      <div class="comparison-cell trad">Chases one-off placements</div>
-      <div class="comparison-cell ours">Engineers narrative infrastructure</div>
-
-      <div class="comparison-cell trad">"We got you in 5 outlets this quarter"</div>
-      <div class="comparison-cell ours">"We built documented authority that compounds over time"</div>
-
-      <div class="comparison-cell trad">Success = media hits</div>
-      <div class="comparison-cell ours">Success = authority that AI systems recognize and cite</div>
-
-      <div class="comparison-cell trad">Placements are the end goal</div>
-      <div class="comparison-cell ours">Placements are inputs into a bigger system</div>
+    <div class="fade-in">
+      <p class="whatwedo-not">I'm not a traditional PR agency.</p>
+      <p class="whatwedo-not">I'm not a content mill.</p>
+      <p class="whatwedo-not">I'm not an SEO consultant.</p>
+      <p class="whatwedo-bio">I'm a PR operator who spent 25 years pitching journalists and closing editorial coverage. Now I do that same work but structured for AI comprehension and measured by citations instead of rankings.</p>
+      <p class="whatwedo-list-label">You get:</p>
+      <ul class="whatwedo-list">
+        <li>Strategic editorial pitches to tier-1 outlets that feed AI training data</li>
+        <li>Structured articles engineered for both human readers and machine citation</li>
+        <li>Direct access to me (not an account manager, not a junior team member)</li>
+        <li>Weekly measurement across ChatGPT, Claude, Gemini, Perplexity</li>
+        <li>Monthly strategy adjustments based on what's actually working</li>
+      </ul>
+      <p class="whatwedo-close">That's it. No fluff. No volume plays. Just strategic PR work that compounds.</p>
     </div>
-
-    <p class="comparison-group-label fade-in">vs. Content Marketing Agency</p>
-    <div class="comparison-table fade-in">
-      <div class="comparison-header trad">Content Marketing Agency</div>
-      <div class="comparison-header ours">On.Visibility</div>
-
-      <div class="comparison-cell trad">Produces high-quality articles</div>
-      <div class="comparison-cell ours">Produces structured authority content engineered for AI comprehension</div>
-
-      <div class="comparison-cell trad">Distributes to your channels</div>
-      <div class="comparison-cell ours">Distributes across multiple surfaces simultaneously (blog, LinkedIn, Substack, press wire, newsroom, authority platforms)</div>
-
-      <div class="comparison-cell trad">Hopes it ranks or resonates</div>
-      <div class="comparison-cell ours">Layers in tier-1 earned media that feeds AI training data</div>
-
-      <div class="comparison-cell trad">Success = articles published</div>
-      <div class="comparison-cell ours">Success = citations that compound</div>
-    </div>
-
-    <p class="comparison-group-label fade-in">vs. SEO Agency</p>
-    <div class="comparison-table fade-in">
-      <div class="comparison-header trad">SEO Agency</div>
-      <div class="comparison-header ours">On.Visibility</div>
-
-      <div class="comparison-cell trad">Optimizes for search rankings</div>
-      <div class="comparison-cell ours">Optimizes for AI recommendation</div>
-
-      <div class="comparison-cell trad">Competes for position on the results page</div>
-      <div class="comparison-cell ours">Engineers trust-based decisions: "Is this brand credible enough to cite?"</div>
-
-      <div class="comparison-cell trad">Focus: keywords, technical optimization, backlinks</div>
-      <div class="comparison-cell ours">Focus: documented authority, entity clarity, distributed trust signals</div>
-
-      <div class="comparison-cell trad">Output: ranking traffic</div>
-      <div class="comparison-cell ours">Output: citation traffic (which increasingly matters more for B2B decisions)</div>
-    </div>
-
   </section>
 
-  <!-- FRAMEWORK -->
+  <!-- HOW THIS WORKS -->
   <section id="framework">
-    <p class="section-tag">The Framework</p>
+    <p class="section-tag">How This Works</p>
     <div class="framework-intro">
       <h2 class="framework-headline fade-in">
-        Benchmark. Build.<br />Broadcast. <em>Boost.</em>
+        Audit. Create.<br />Amplify. <em>Measure.</em>
       </h2>
       <p class="framework-desc fade-in">
-        Four Phases. One Mission: Make you a source AI systems cite.
+        Four phases. Leeann does the work. You track the results.
       </p>
     </div>
     <div class="framework-phases">
       <div class="phase fade-in">
         <p class="phase-label">Phase 01</p>
-        <h3 class="phase-name">Benchmark Your Authority Landscape</h3>
-        <p class="phase-subtitle">How AI systems interpret your brand and competitors. Where earned media signals are weak or scattered. Where to build narrative advantage.</p>
+        <h3 class="phase-name">Audit</h3>
+        <p class="phase-subtitle">I analyze your competitive visibility landscape, identify authority gaps, and map where documented proof is weak or scattered.</p>
         <div class="phase-divider"></div>
-        <p class="phase-desc">We analyze your competitive visibility landscape, identify authority gaps, and build a strategic roadmap for documented authority.</p>
-        <p class="phase-outcome">Competitive authority audit + strategic roadmap</p>
+        <p class="phase-outcome">Output: Competitive Authority Audit + Strategic Roadmap</p>
       </div>
       <div class="phase fade-in">
         <p class="phase-label">Phase 02</p>
-        <h3 class="phase-name">Build Documented Authority</h3>
-        <p class="phase-subtitle">Curated, uniquely human stories engineered so AI systems recognize your authority.</p>
+        <h3 class="phase-name">Create</h3>
+        <p class="phase-subtitle">I write structured anchor articles (1,800+ words, FAQs, data, entity clarity, schema markup). Stories that are compelling to humans and clear to AI systems.</p>
         <div class="phase-divider"></div>
-        <p class="phase-desc">Structured anchor articles of 1,800+ words with FAQs, data, entity copy, and schema markup. Authority content engineered for both human and machine trust.</p>
-        <p class="phase-outcome">2&ndash;4 strategic articles per month</p>
+        <p class="phase-outcome">Output: 2-4 Strategic Articles / Month</p>
       </div>
       <div class="phase fade-in">
         <p class="phase-label">Phase 03</p>
-        <h3 class="phase-name">Broadcast &amp; Earn</h3>
-        <p class="phase-subtitle">Multi-surface distribution and strategic outreach to tier-1 outlets that feed AI training data. Third-party validation that turns claimed authority into documented authority.</p>
+        <h3 class="phase-name">Amplify</h3>
+        <p class="phase-subtitle">I pitch journalists and manage distribution across five surfaces simultaneously: blog, LinkedIn, Substack, press wire, newsroom, authority platforms. I close the coverage.</p>
         <div class="phase-divider"></div>
-        <p class="phase-desc">One approved article reaches five surfaces simultaneously: blog, LinkedIn, Substack, press wire, newsroom, and authority platforms. Earned media compounds your citation signal.</p>
-        <p class="phase-outcome">5+ tier-1 press placements per quarter</p>
+        <p class="phase-outcome">Output: 5+ Tier-1 Press Placements / Quarter</p>
       </div>
       <div class="phase fade-in">
         <p class="phase-label">Phase 04</p>
-        <h3 class="phase-name">Boost Your Citation Signal</h3>
-        <p class="phase-subtitle">Weekly probes across ChatGPT, Claude, Gemini, and Perplexity. Track citation footprint, mention frequency, and competitive positioning.</p>
+        <h3 class="phase-name">Measure</h3>
+        <p class="phase-subtitle">I probe ChatGPT, Claude, Gemini, and Perplexity weekly. I track your citation footprint, mention frequency, and competitive position. You see exactly how your authority is compounding.</p>
         <div class="phase-divider"></div>
-        <p class="phase-desc">We track citation footprint, answer share, prompt consistency, and competitive position. You see exactly what's working and how your authority is compounding over time.</p>
-        <p class="phase-outcome">Weekly measurement report + monthly optimization</p>
+        <p class="phase-outcome">Output: Weekly Measurement Report + Monthly Optimization</p>
       </div>
     </div>
   </section>
