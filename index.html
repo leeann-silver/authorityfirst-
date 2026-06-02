@@ -53,28 +53,65 @@
 
     /* ── LOGO SYSTEM ── */
     .logo-icon {
-      height: 28px;
+      height: 32px;
       width: auto;
       flex-shrink: 0;
       display: block;
     }
-    .logo-icon--sm { height: 20px; }
-    .logo-icon--lg { height: 52px; }
+    .logo-icon--sm { height: 24px; }
+    .logo-icon--lg { height: 64px; }
 
+    /* Nav: horizontal lockup */
     .nav-logo {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      font-weight: 300;
-      letter-spacing: -0.01em;
-      color: var(--navy);
+      gap: 0.8rem;
       text-decoration: none;
     }
-    .nav-logo em,
-    .footer-logo em,
-    .brand-intro-name em {
+
+    .logo-wordmark {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 0.95rem;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+
+    .logo-wordmark em {
+      font-style: italic;
+      color: var(--gold);
+      font-size: 1em;
+    }
+
+    /* Brand intro: stacked lockup */
+    .brand-lockup-stacked {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-wordmark {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 2.5vw, 2.5rem);
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      text-align: center;
+    }
+
+    .brand-wordmark em {
+      display: block;
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    /* Footer: reversed horizontal lockup */
+    .footer-logo em {
       font-style: italic;
       color: var(--gold);
     }
@@ -113,36 +150,19 @@
 
     /* ── BRAND INTRO ── */
     .brand-intro {
-      padding: 9rem 4rem 3.5rem;
+      padding: 8rem 4rem 4rem;
       text-align: center;
       border-bottom: 1px solid var(--border);
-    }
-
-    .brand-lockup {
-      display: inline-flex;
-      align-items: center;
-      gap: 1.25rem;
-      text-align: left;
+      display: flex;
+      justify-content: center;
     }
 
     .brand-intro-name {
-      font-family: var(--serif);
-      font-size: clamp(1.4rem, 2.2vw, 2rem);
-      font-weight: 300;
-      letter-spacing: -0.01em;
-      color: var(--navy);
-      margin-bottom: 0.3rem;
-      line-height: 1.15;
+      display: none; /* replaced by brand-wordmark */
     }
 
     .brand-intro-tagline {
-      font-family: var(--sans);
-      font-size: 0.7rem;
-      font-weight: 400;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--mid);
-      line-height: 1.4;
+      display: none; /* replaced by brand-wordmark */
     }
 
     .hero-eyebrow {
@@ -2274,7 +2294,7 @@
       transform: translateY(0);
     }
   </style>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 82' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='29' y='0' width='42' height='13' fill='%23c9a558'/%3E%3Crect x='18.5' y='20' width='63' height='13' fill='%231a2d5a'/%3E%3Crect x='10' y='40' width='80' height='16' fill='%232d5ba0'/%3E%3Crect x='0' y='63' width='100' height='19' fill='%233d70cc'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 82' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='29' y='0' width='42' height='13' fill='%23c9a558'/%3E%3Crect x='18.5' y='20' width='63' height='13' fill='%231a2d5a'/%3E%3Crect x='10' y='40' width='80' height='16' fill='%232d5ba0'/%3E%3Crect x='0' y='63' width='100' height='19' fill='%233d6ec8'/%3E%3C/svg%3E">
 </head>
 <body>
 
@@ -2282,12 +2302,12 @@
   <nav id="nav">
     <a href="#" class="nav-logo">
     <svg class="logo-icon" viewBox="0 0 100 82" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <rect x="29" y="0" width="42" height="13" fill="#c9a558"/>
-    <rect x="18.5" y="20" width="63" height="13" fill="#1a2d5a"/>
-    <rect x="10" y="40" width="80" height="16" fill="#2d5ba0"/>
-    <rect x="0" y="63" width="100" height="19" fill="#3d70cc"/>
-  </svg>
-    <span>Authority <em>First</em></span>
+      <rect x="29" y="0" width="42" height="13" fill="#c9a558"/>
+      <rect x="18.5" y="20" width="63" height="13" fill="#1a2d5a"/>
+      <rect x="10" y="40" width="80" height="16" fill="#2d5ba0"/>
+      <rect x="0" y="63" width="100" height="19" fill="#3d6ec8"/>
+    </svg>
+    <span class="logo-wordmark">Authority<em>First</em></span>
   </a>
     <ul class="nav-links">
       <li><a href="#why">Why It Matters</a></li>
@@ -2300,17 +2320,14 @@
 
   <!-- BRAND INTRO -->
   <div class="brand-intro">
-    <div class="brand-lockup">
+    <div class="brand-lockup-stacked">
       <svg class="logo-icon logo-icon--lg" viewBox="0 0 100 82" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <rect x="29" y="0" width="42" height="13" fill="#c9a558"/>
       <rect x="18.5" y="20" width="63" height="13" fill="#1a2d5a"/>
       <rect x="10" y="40" width="80" height="16" fill="#2d5ba0"/>
-      <rect x="0" y="63" width="100" height="19" fill="#3d70cc"/>
+      <rect x="0" y="63" width="100" height="19" fill="#3d6ec8"/>
     </svg>
-      <div>
-        <p class="brand-intro-name">Authority <em>First</em></p>
-        <p class="brand-intro-tagline">Build Authority. AI Will Cite It.</p>
-      </div>
+      <p class="brand-wordmark">Authority<em>First</em></p>
     </div>
   </div>
 
@@ -2679,13 +2696,13 @@
       <a href="#" class="footer-logo">
       <svg class="logo-icon logo-icon--sm" viewBox="0 0 100 82" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <rect x="29" y="0" width="42" height="13" fill="#c9a558"/>
-        <rect x="18.5" y="20" width="63" height="13" fill="rgba(250,250,248,0.9)"/>
-        <rect x="10" y="40" width="80" height="16" fill="rgba(250,250,248,0.65)"/>
-        <rect x="0" y="63" width="100" height="19" fill="rgba(250,250,248,0.45)"/>
+        <rect x="18.5" y="20" width="63" height="13" fill="rgba(250,250,248,0.92)"/>
+        <rect x="10" y="40" width="80" height="16" fill="rgba(250,250,248,0.72)"/>
+        <rect x="0" y="63" width="100" height="19" fill="rgba(250,250,248,0.52)"/>
       </svg>
-        Authority <em>First</em>
+        <span class="logo-wordmark" style="color:rgba(250,250,248,0.9);">Authority<em>First</em></span>
       </a>
-      <p class="footer-tagline">Positioning clarity + visibility infrastructure. We architect authority that compounds.</p>
+      <p class="footer-tagline">Build documented authority that AI systems recognize and cite.</p>
     </div>
     <div class="footer-right">
       <ul class="footer-links">
