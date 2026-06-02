@@ -1126,48 +1126,60 @@
 
     .problem-headline {
       font-family: var(--serif);
-      font-size: clamp(2.5rem, 5vw, 5.5rem);
+      font-size: clamp(2.2rem, 4.5vw, 5rem);
       font-weight: 300;
-      line-height: 1.05;
+      line-height: 1.08;
       letter-spacing: -0.02em;
-      margin-bottom: 5rem;
-      max-width: 20ch;
+      margin-bottom: 4rem;
+      max-width: 26ch;
     }
-    .problem-headline em { font-style: italic; }
+    .problem-headline em { font-style: italic; color: var(--gold); }
 
     .problem-lead {
-      font-family: var(--serif);
-      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
-      font-weight: 300;
-      color: var(--white);
-      line-height: 1.3;
-      margin-bottom: 3rem;
-      max-width: 32ch;
+      font-size: 1rem;
+      color: #bbb;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      max-width: 60ch;
     }
 
-    .problem-text-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      margin-bottom: 3rem;
-      border-top: 1px solid #333;
-      padding-top: 2.5rem;
+    .problem-pivot {
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.35;
+      margin: 2.5rem 0;
+      max-width: 42ch;
     }
 
     .problem-para {
       font-size: 1rem;
       color: #aaa;
       line-height: 1.8;
+      max-width: 66ch;
+      margin-bottom: 1.5rem;
     }
 
     .problem-conclusion {
       font-family: var(--serif);
-      font-size: clamp(1.3rem, 2vw, 1.8rem);
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
       font-weight: 300;
       color: var(--gold);
       border-top: 1px solid #333;
       padding-top: 2rem;
+      margin-top: 2rem;
       font-style: italic;
+      max-width: 54ch;
+    }
+
+    .problem-kicker {
+      font-size: 0.95rem;
+      color: #888;
+      line-height: 1.7;
+      margin-top: 1.5rem;
+      font-style: italic;
+      max-width: 50ch;
     }
 
     /* ── FRAMEWORK ── */
@@ -2267,14 +2279,14 @@
   <section id="problem">
     <p class="section-tag">The Problem</p>
     <h2 class="problem-headline fade-in">
-      You're Built For<br />A <em>Different</em><br />Ecosystem.
+      Your Authority Infrastructure<br />Is Built For Google.<br /><em>Not For AI.</em>
     </h2>
-    <p class="problem-lead fade-in">Your team optimizes for search and owned channels. Your story is told the way you want it told.</p>
-    <div class="problem-text-grid">
-      <p class="problem-para fade-in">But your customers increasingly ask ChatGPT, Claude, Gemini, and Perplexity how to solve problems, compare vendors, and make buying decisions.</p>
-      <p class="problem-para fade-in">When those AI systems synthesize an answer, they don't cite your website. They cite the articles journalists have written about you. The expert commentary you've given. The third-party validation in press coverage, analyst reports, and trusted platforms. In other words: they cite the narrative footprint you've built in the broader information ecosystem.</p>
-    </div>
-    <p class="problem-conclusion fade-in">If that footprint doesn't exist, neither do you. Not to the buyers who matter most.</p>
+    <p class="problem-lead fade-in">Most brands optimize for search. Google ranks. Website traffic grows. You control the narrative.</p>
+    <p class="problem-para fade-in">But 50% of consumers now bypass search entirely. They ask ChatGPT, Claude, Gemini, or Perplexity instead.</p>
+    <p class="problem-pivot fade-in">Here's what changes: AI systems don't rank websites. They synthesize citations.</p>
+    <p class="problem-para fade-in">When someone asks "which vendor should I use?" they don't get your homepage in the answer. They get synthesized references to what journalists have written about you. What expert commentary you've given. What analyst coverage validates your authority.</p>
+    <p class="problem-conclusion fade-in">If that narrative footprint doesn't exist, neither do you. Not to the buyers making AI-assisted decisions.</p>
+    <p class="problem-kicker fade-in">Your marketing works for one ecosystem. Your customers have moved to another.</p>
   </section>
 
   <!-- THE COMPETITION PARADOX -->
