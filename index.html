@@ -158,10 +158,26 @@
       align-items: center;
     }
 
+    .brand-intro-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
     .brand-logo-img {
       height: auto;
       width: clamp(240px, 35vw, 380px);
       display: block;
+    }
+
+    .brand-tagline {
+      font-family: var(--serif);
+      font-size: clamp(1rem, 1.4vw, 1.25rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--mid);
+      letter-spacing: 0.02em;
     }
 
     .footer-logo-img {
@@ -2340,7 +2356,10 @@
 
   <!-- BRAND INTRO -->
   <div class="brand-intro">
-    <img src="assets/af-logo-horizontal-color.png" alt="Authority First" class="brand-logo-img" />
+    <div class="brand-intro-inner">
+      <img src="assets/af-logo-horizontal-color.png" alt="Authority First" class="brand-logo-img" />
+      <p class="brand-tagline">Become the source.</p>
+    </div>
   </div>
 
   <!-- HERO -->
