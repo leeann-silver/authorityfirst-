@@ -155,6 +155,20 @@
       border-bottom: 1px solid var(--border);
       display: flex;
       justify-content: center;
+      align-items: center;
+    }
+
+    .brand-logo-img {
+      height: auto;
+      width: clamp(240px, 35vw, 380px);
+      display: block;
+    }
+
+    .footer-logo-img {
+      height: auto;
+      width: clamp(160px, 20vw, 240px);
+      display: block;
+      opacity: 0.95;
     }
 
     .brand-intro-name {
@@ -2305,7 +2319,7 @@
       transform: translateY(0);
     }
   </style>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox=%270 0 100 100%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath d=%27M%2050,4%20L%2059,38%20L%2086,50%20L%2059,62%20L%2050,96%20L%2041,62%20L%2014,50%20L%2041,38%20Z%27 fill=%27%23c9a558%27/%3E%3C/svg%3E">
+  <link rel="icon" type="image/png" href="assets/af-star-gold-512.png">
 </head>
 <body>
 
@@ -2326,10 +2340,7 @@
 
   <!-- BRAND INTRO -->
   <div class="brand-intro">
-    <div class="brand-lockup-stacked">
-      <svg class="logo-icon logo-icon--lg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M 50,4 L 59,38 L 86,50 L 59,62 L 50,96 L 41,62 L 14,50 L 41,38 Z" fill="#c9a558"/></svg>
-      <p class="brand-wordmark">Authority<em>First</em></p>
-    </div>
+    <img src="assets/af-logo-horizontal-color.png" alt="Authority First" class="brand-logo-img" />
   </div>
 
   <!-- HERO -->
@@ -2696,8 +2707,7 @@
   <footer>
     <div class="footer-left">
       <a href="#" class="footer-logo">
-        <svg class="logo-icon logo-icon--sm" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M 50,4 L 59,38 L 86,50 L 59,62 L 50,96 L 41,62 L 14,50 L 41,38 Z" fill="#c9a558"/></svg>
-        <span class="logo-wordmark" style="color:rgba(250,250,248,0.92);">Authority<em>First</em></span>
+        <img src="assets/af-logo-horizontal-reversed.png" alt="Authority First" class="footer-logo-img" />
       </a>
       <p class="footer-tagline">Build documented authority that AI systems recognize and cite.</p>
     </div>
