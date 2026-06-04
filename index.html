@@ -247,6 +247,16 @@
       gap: 2rem;
     }
 
+    .hero-statement {
+      font-family: var(--serif);
+      font-size: clamp(1.3rem, 2.2vw, 2rem);
+      font-weight: 300;
+      color: var(--navy);
+      font-style: italic;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+
     .hero-sub {
       font-size: 1rem;
       color: var(--mid);
@@ -1352,15 +1362,48 @@
       line-height: 1.65;
     }
 
+    /* Output: prominent, above description */
     .phase-outcome {
-      margin-top: 1.5rem;
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.05em;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--gold);
-      padding-top: 1rem;
-      border-top: 1px solid rgba(201, 165, 88, 0.3);
+      margin-top: 0.75rem;
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+
+    /* Flow visual: Audit → Build → Earn → Compound */
+    .problem-flow,
+    .framework-flow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 2.5rem 0;
+    }
+
+    .problem-flow-step,
+    .framework-flow-step {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: rgba(201,165,88,0.12);
+      border: 1px solid rgba(201,165,88,0.35);
+      padding: 0.5rem 1rem;
+    }
+
+    .problem-flow-arrow,
+    .framework-flow-arrow {
+      color: var(--gold);
+      font-size: 1rem;
+      font-weight: 300;
+      flex-shrink: 0;
     }
 
     .phase-support {
@@ -2348,14 +2391,14 @@
       transform: translateY(0);
     }
   </style>
-  <link rel="icon" type="image/png" href="assets/af-star-gold-512.png">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2250%22%20y2%3D%2213%22%20stroke%3D%22%23c4bfb0%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2282%22%20y2%3D%2231.5%22%20stroke%3D%22%23c4bfb0%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2282%22%20y2%3D%2268.5%22%20stroke%3D%22%23c4bfb0%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2250%22%20y2%3D%2287%22%20stroke%3D%22%23c4bfb0%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2218%22%20y2%3D%2268.5%22%20stroke%3D%22%23c4bfb0%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2218%22%20y2%3D%2231.5%22%20stroke%3D%22%23c4bfb0%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2213%22%20r%3D%227%22%20fill%3D%22%231a2d5a%22%2F%3E%3Ccircle%20cx%3D%2282%22%20cy%3D%2231.5%22%20r%3D%227%22%20fill%3D%22%231a2d5a%22%2F%3E%3Ccircle%20cx%3D%2282%22%20cy%3D%2268.5%22%20r%3D%227%22%20fill%3D%22%231a2d5a%22%2F%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2287%22%20r%3D%227%22%20fill%3D%22%231a2d5a%22%2F%3E%3Ccircle%20cx%3D%2218%22%20cy%3D%2268.5%22%20r%3D%227%22%20fill%3D%22%231a2d5a%22%2F%3E%3Ccircle%20cx%3D%2218%22%20cy%3D%2231.5%22%20r%3D%227%22%20fill%3D%22%231a2d5a%22%2F%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2215%22%20fill%3D%22%23c9a558%22%2F%3E%3C%2Fsvg%3E">
 </head>
 <body>
 
   <!-- NAV -->
   <nav id="nav">
     <a href="#" class="nav-logo">
-    <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M 50,4 L 59,38 L 86,50 L 59,62 L 50,96 L 41,62 L 14,50 L 41,38 Z" fill="#c9a558"/></svg>
+    <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="50" x2="50" y2="13" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="82" y2="31.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="82" y2="68.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="50" y2="87" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="18" y2="68.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="18" y2="31.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><circle cx="50" cy="13" r="7" fill="#1a2d5a"/><circle cx="82" cy="31.5" r="7" fill="#1a2d5a"/><circle cx="82" cy="68.5" r="7" fill="#1a2d5a"/><circle cx="50" cy="87" r="7" fill="#1a2d5a"/><circle cx="18" cy="68.5" r="7" fill="#1a2d5a"/><circle cx="18" cy="31.5" r="7" fill="#1a2d5a"/><circle cx="50" cy="50" r="15" fill="#c9a558"/></svg>
     <span class="logo-wordmark">Authority<em>First</em></span>
   </a>
     <ul class="nav-links">
@@ -2370,8 +2413,9 @@
   <!-- BRAND INTRO -->
   <div class="brand-intro">
     <div class="brand-intro-inner">
-      <img src="assets/af-logo-horizontal-color.png" alt="Authority First" class="brand-logo-img" />
-      <p class="brand-tagline">Become the source.</p>
+      <svg class="logo-icon logo-icon--lg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="50" x2="50" y2="13" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="82" y2="31.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="82" y2="68.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="50" y2="87" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="18" y2="68.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="18" y2="31.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><circle cx="50" cy="13" r="7" fill="#1a2d5a"/><circle cx="82" cy="31.5" r="7" fill="#1a2d5a"/><circle cx="82" cy="68.5" r="7" fill="#1a2d5a"/><circle cx="50" cy="87" r="7" fill="#1a2d5a"/><circle cx="18" cy="68.5" r="7" fill="#1a2d5a"/><circle cx="18" cy="31.5" r="7" fill="#1a2d5a"/><circle cx="50" cy="50" r="15" fill="#c9a558"/></svg>
+      <p class="brand-wordmark">Authority<em>First</em></p>
+      <p class="brand-tagline">Become the source AI recognizes.</p>
     </div>
   </div>
 
@@ -2383,11 +2427,9 @@
       Build Authority.<br /><em>AI Will Cite It.</em>
     </h1>
     <div class="hero-bottom fade-in">
+      <p class="hero-statement fade-in">Visibility follows authority.</p>
       <p class="hero-sub">
-        In a world where buyers ask ChatGPT, Claude, Gemini, and Perplexity for answers, one thing matters: Can AI systems find you credible enough to recommend?
-      </p>
-      <p class="hero-sub">
-        We help you build the kind of documented expertise (across third-party coverage, media presence, and expert positioning) that AI systems learn to cite. Not to game algorithms. Because this is what AI actually recognizes as trustworthy.
+        Build the authority infrastructure that makes your brand discoverable, credible, and citable in the age of AI.
       </p>
       <div class="hero-stat-row">
         <div>
@@ -2406,12 +2448,21 @@
   <section id="problem">
     <p class="section-tag">The Problem</p>
     <h2 class="problem-headline fade-in">
-      Here's the<br /><em>Real Problem.</em>
+      Why Visibility<br />Is <em>Changing.</em>
     </h2>
-    <p class="problem-lead fade-in">Your buyers have moved on from Google. They ask ChatGPT, Claude, Gemini, and Perplexity for answers.</p>
-    <p class="problem-para fade-in">When those AI systems synthesize an answer to a buyer's question, they don't cite your website. They cite the articles journalists wrote about you. The commentary you gave on industry trends. The analyst reports mentioning you. The trusted third-party validation in your category.</p>
-    <p class="problem-pivot fade-in">In other words: They cite your documented authority in the broader information ecosystem.</p>
-    <p class="problem-conclusion fade-in">If that authority doesn't exist, you're invisible to the buyers who matter most, even if they're asking the exact questions your company answers.</p>
+    <p class="problem-lead fade-in">AI doesn't discover brands the same way search engines do. Your buyers have moved on from Google. They ask ChatGPT, Claude, Gemini, and Perplexity for answers.</p>
+    <p class="problem-para fade-in">The companies that get cited, recommended, and trusted are building authority systems, not just publishing content.</p>
+    <p class="problem-pivot fade-in">Authority isn't built through more content. It's built through a system.</p>
+    <div class="problem-flow fade-in">
+      <span class="problem-flow-step">Audit</span>
+      <span class="problem-flow-arrow">&#8594;</span>
+      <span class="problem-flow-step">Build</span>
+      <span class="problem-flow-arrow">&#8594;</span>
+      <span class="problem-flow-step">Earn</span>
+      <span class="problem-flow-arrow">&#8594;</span>
+      <span class="problem-flow-step">Compound</span>
+    </div>
+    <p class="problem-conclusion fade-in">Four phases that transform expertise into lasting authority.</p>
   </section>
 
 
@@ -2460,40 +2511,49 @@
     <p class="section-tag">How It Works</p>
     <div class="framework-intro">
       <h2 class="framework-headline fade-in">
-        Build Authority<br /><em>AI Recognizes.</em>
+        Authority isn't built<br />through more content.<br /><em>It's built through a system.</em>
       </h2>
+      <div class="framework-flow fade-in">
+        <span class="framework-flow-step">Audit</span>
+        <span class="framework-flow-arrow">&#8594;</span>
+        <span class="framework-flow-step">Build</span>
+        <span class="framework-flow-arrow">&#8594;</span>
+        <span class="framework-flow-step">Earn</span>
+        <span class="framework-flow-arrow">&#8594;</span>
+        <span class="framework-flow-step">Compound</span>
+      </div>
       <p class="framework-desc fade-in">
-        Four phases. From understanding your gaps to compounding authority over time.
+        Four phases that transform expertise into lasting authority.
       </p>
     </div>
     <div class="framework-phases">
       <div class="phase fade-in">
         <p class="phase-label">Phase 01</p>
         <h3 class="phase-name">Understand Your Authority Gap</h3>
-        <p class="phase-subtitle">We analyze how AI systems currently see your brand vs. competitors. Where is your documented authority strong? Where is it missing? What third-party validation would move the needle?</p>
-        <div class="phase-divider"></div>
         <p class="phase-outcome">Output: Competitive authority audit + roadmap</p>
+        <div class="phase-divider"></div>
+        <p class="phase-subtitle">We analyze how AI systems currently see your brand vs. competitors. Where is your documented authority strong? Where is it missing? What third-party validation would move the needle?</p>
       </div>
       <div class="phase fade-in">
         <p class="phase-label">Phase 02</p>
         <h3 class="phase-name">Build Documented Authority Content</h3>
-        <p class="phase-subtitle">We create research-backed anchor articles engineered for AI comprehension. Not high-volume content. Strategic, structured pieces backed by data; the kind of documented expertise AI systems recognize as real. AI agents want structure, data, case studies, proof, numbers, real ROI. We build for that. Each article becomes evidence of your authority, not just content. It's documented expertise that compounds.</p>
-        <div class="phase-divider"></div>
         <p class="phase-outcome">Output: 2&ndash;4 strategic articles / month (1,800+ words, schema-marked, FAQ-rich)</p>
+        <div class="phase-divider"></div>
+        <p class="phase-subtitle">We create research-backed anchor articles engineered for AI comprehension. Not high-volume content. Strategic, structured pieces backed by data; the kind of documented expertise AI systems recognize as real. AI agents want structure, data, case studies, proof, numbers, real ROI. We build for that. Each article becomes evidence of your authority, not just content. It's documented expertise that compounds.</p>
       </div>
       <div class="phase fade-in">
         <p class="phase-label">Phase 03</p>
         <h3 class="phase-name">Earn Third-Party Validation</h3>
-        <p class="phase-subtitle">Your content reaches journalists, analysts, industry platforms. When tier-1 outlets cover your expertise, those citations feed AI training data. Your claimed authority becomes documented authority.</p>
-        <div class="phase-divider"></div>
         <p class="phase-outcome">Output: 5+ tier-1 placements / quarter across multiple trusted surfaces</p>
+        <div class="phase-divider"></div>
+        <p class="phase-subtitle">Your content reaches journalists, analysts, industry platforms. When tier-1 outlets cover your expertise, those citations feed AI training data. Your claimed authority becomes documented authority.</p>
       </div>
       <div class="phase fade-in">
         <p class="phase-label">Phase 04</p>
         <h3 class="phase-name">Measure &amp; Compound</h3>
-        <p class="phase-subtitle">We track exactly how many times AI systems cite you, which questions they mention you for, how you rank against competitors. Then we double down on what's working.</p>
-        <div class="phase-divider"></div>
         <p class="phase-outcome">Output: Weekly citation tracking + monthly optimization</p>
+        <div class="phase-divider"></div>
+        <p class="phase-subtitle">We track exactly how many times AI systems cite you, which questions they mention you for, how you rank against competitors. Then we double down on what's working.</p>
       </div>
     </div>
   </section>
@@ -2760,9 +2820,10 @@
   <footer>
     <div class="footer-left">
       <a href="#" class="footer-logo">
-        <img src="assets/af-logo-horizontal-reversed.png" alt="Authority First" class="footer-logo-img" />
+        <svg class="logo-icon logo-icon--sm" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="50" x2="50" y2="13" stroke="rgba(250,250,248,0.4)" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="82" y2="31.5" stroke="rgba(250,250,248,0.4)" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="82" y2="68.5" stroke="rgba(250,250,248,0.4)" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="50" y2="87" stroke="rgba(250,250,248,0.4)" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="18" y2="68.5" stroke="rgba(250,250,248,0.4)" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="18" y2="31.5" stroke="rgba(250,250,248,0.4)" stroke-width="2.5" stroke-linecap="round"/><circle cx="50" cy="13" r="7" fill="rgba(250,250,248,0.88)"/><circle cx="82" cy="31.5" r="7" fill="rgba(250,250,248,0.88)"/><circle cx="82" cy="68.5" r="7" fill="rgba(250,250,248,0.88)"/><circle cx="50" cy="87" r="7" fill="rgba(250,250,248,0.88)"/><circle cx="18" cy="68.5" r="7" fill="rgba(250,250,248,0.88)"/><circle cx="18" cy="31.5" r="7" fill="rgba(250,250,248,0.88)"/><circle cx="50" cy="50" r="15" fill="#c9a558"/></svg>
+        <span class="logo-wordmark" style="color:rgba(250,250,248,0.92);">Authority<em>First</em></span>
       </a>
-      <p class="footer-tagline">Become the source.</p>
+      <p class="footer-tagline">Become the source AI recognizes.</p>
     </div>
     <div class="footer-right">
       <ul class="footer-links">
