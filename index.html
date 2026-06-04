@@ -396,12 +396,14 @@
 
     .why-opener {
       font-family: var(--serif);
-      font-size: clamp(1rem, 1.4vw, 1.2rem);
+      font-size: clamp(1.8rem, 3.5vw, 3.5rem);
       font-weight: 300;
       color: var(--navy);
       font-style: italic;
-      margin-bottom: 2rem;
-      padding-bottom: 2rem;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2.5rem;
       border-bottom: 1px solid var(--border);
     }
 
@@ -1282,10 +1284,9 @@
     }
 
     .framework-intro {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: end;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
       margin-bottom: 5rem;
     }
 
@@ -1296,6 +1297,7 @@
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--gold);
+      margin-top: 2rem;
       margin-bottom: 1.5rem;
     }
 
@@ -2513,10 +2515,10 @@
   <section id="framework">
     <p class="section-tag">How It Works</p>
     <div class="framework-intro">
-      <p class="framework-label fade-in">The Authority First Framework</p>
       <h2 class="framework-headline fade-in">
         Authority isn't built<br />through more content.<br /><em>It's built through a system.</em>
       </h2>
+      <p class="framework-label fade-in">The Authority First Framework</p>
       <div class="framework-flow fade-in">
         <span class="framework-flow-step">Audit</span>
         <span class="framework-flow-arrow">&#8594;</span>
