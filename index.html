@@ -488,8 +488,10 @@
     .footer-copy { font-size: 0.65rem; color: rgba(255,255,255,0.4); }
 
     /* ─── FADE-IN ─── */
-    .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.55s ease, transform 0.55s ease; }
-    .fade-in.visible { opacity: 1; transform: none; }
+    /* Default: content always visible. JS enhances with animation. */
+    .fade-in { opacity: 1; transform: none; }
+    .js-anim .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .js-anim .fade-in.visible { opacity: 1; transform: none; }
 
     /* ─── MOBILE ─── */
     @media (max-width: 768px) {
@@ -812,12 +814,13 @@
       nav.classList.toggle('scrolled', window.scrollY > 40);
     });
 
-    // Fade-in on scroll
+    // Fade-in on scroll — only activate animation if JS is healthy
+    document.body.classList.add('js-anim');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
     // Form submission via Formspree
